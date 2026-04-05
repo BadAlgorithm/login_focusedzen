@@ -5,6 +5,7 @@ import {
   getKindeRequiredCSS,
   getKindeRequiredJS,
   getKindeCSRF,
+  getKindeNonce,
   type KindePageEvent,
 } from "@kinde/infrastructure";
 import { getStyles } from "./styles/styles";
@@ -26,14 +27,17 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex, nofollow" />
         <title>{context.widget.content.pageTitle || "FocusedZen"}</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         {getKindeRequiredCSS()}
-        <style dangerouslySetInnerHTML={{ __html: getStyles() }} />
+        <style nonce={getKindeNonce()} dangerouslySetInnerHTML={{ __html: `
+          @font-face {
+            font-family: 'Manrope';
+            src: url('https://cdn.focusedzen.com/login/fonts/manrope.woff2') format('woff2');
+            font-weight: 400 700;
+            font-style: normal;
+            font-display: swap;
+          }
+          ${getStyles()}
+        ` }} />
       </head>
       <body>
         <div style={{ position: "absolute", width: 0, height: 0, overflow: "hidden", opacity: 0 }}>
