@@ -120,21 +120,48 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           }}
         />
 
-        {/* Enso watermark - bottom right */}
-        <img
-          src="https://cdn.focusedzen.com/login/enso-logo.png"
-          alt=""
+        {/* Bottom bar: frosted glass with tagline + enso */}
+        <div
           style={{
             position: "absolute",
             bottom: "2rem",
+            left: "2rem",
             right: "2rem",
-            width: "48px",
-            height: "48px",
-            opacity: 0.2,
-            zIndex: 2,
-            pointerEvents: "none",
+            zIndex: 3,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            background: "rgba(22, 23, 23, 0.45)",
+            backdropFilter: "blur(16px)",
+            WebkitBackdropFilter: "blur(16px)",
+            borderRadius: "14px",
+            border: "1px solid rgba(255, 255, 255, 0.06)",
+            padding: "1rem 1.25rem",
           }}
-        />
+        >
+          <p
+            style={{
+              fontSize: "0.9rem",
+              fontWeight: 500,
+              color: "rgba(232, 230, 227, 0.75)",
+              letterSpacing: "-0.01em",
+              lineHeight: 1.4,
+            }}
+          >
+            The zen garden your focus time deserves.
+          </p>
+          <img
+            src="https://cdn.focusedzen.com/login/enso-logo.png"
+            alt=""
+            style={{
+              width: "36px",
+              height: "36px",
+              opacity: 0.5,
+              marginLeft: "1rem",
+              flexShrink: 0,
+            }}
+          />
+        </div>
       </div>
     </div>
   );
