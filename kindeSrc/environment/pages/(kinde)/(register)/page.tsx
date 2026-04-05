@@ -12,8 +12,8 @@ const RegisterPage: React.FC<KindePageEvent> = ({ context, request }) => {
     <Root context={context} request={request}>
       <SplitLayout>
         <Widget
-          heading={context.widget.content.heading}
-          description={context.widget.content.description}
+          heading="Ready when you are"
+          description="Your first session is a moment away."
         />
       </SplitLayout>
     </Root>

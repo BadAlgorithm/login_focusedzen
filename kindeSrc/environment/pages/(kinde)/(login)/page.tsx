@@ -12,8 +12,8 @@ const LoginPage: React.FC<KindePageEvent> = ({ context, request }) => {
     <Root context={context} request={request}>
       <SplitLayout>
         <Widget
-          heading={context.widget.content.heading}
-          description={context.widget.content.description}
+          heading="Ready when you are"
+          description=""
         />
       </SplitLayout>
     </Root>
