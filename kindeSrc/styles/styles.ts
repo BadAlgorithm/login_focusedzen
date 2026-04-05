@@ -209,11 +209,180 @@ export function getStyles(): string {
       animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
+    /* ---- Firefly ambient animation ---- */
+
+    .firefly {
+      position: absolute;
+      border-radius: 50%;
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+
+    .firefly-1 {
+      width: 5px; height: 5px;
+      background: #f5d47a;
+      box-shadow: 0 0 4px 2px rgba(245,212,122,0.8), 0 0 14px 7px rgba(245,212,122,0.35), 0 0 30px 15px rgba(245,212,122,0.1);
+      top: 18%; left: 22%;
+      animation: drift-1 27s ease-in-out infinite, glow-1 8s ease-in-out infinite;
+      animation-delay: -12s, -4s;
+    }
+
+    .firefly-2 {
+      width: 4px; height: 4px;
+      background: #f0cc5e;
+      box-shadow: 0 0 3px 2px rgba(240,204,94,0.7), 0 0 12px 6px rgba(240,204,94,0.3), 0 0 24px 12px rgba(240,204,94,0.08);
+      top: 42%; left: 65%;
+      animation: drift-2 23s ease-in-out infinite, glow-2 10s ease-in-out infinite;
+      animation-delay: -8s, -6s;
+    }
+
+    .firefly-3 {
+      width: 3px; height: 3px;
+      background: #e8c547;
+      box-shadow: 0 0 3px 1px rgba(232,197,71,0.7), 0 0 10px 5px rgba(232,197,71,0.25), 0 0 20px 10px rgba(232,197,71,0.08);
+      top: 12%; left: 75%;
+      animation: drift-3 31s ease-in-out infinite, glow-1 7s ease-in-out infinite;
+      animation-delay: -20s, -2s;
+    }
+
+    .firefly-4 {
+      width: 2px; height: 2px;
+      background: #d4c455;
+      box-shadow: 0 0 2px 1px rgba(212,196,85,0.5), 0 0 8px 4px rgba(212,196,85,0.15);
+      top: 55%; left: 35%;
+      animation: drift-4 29s ease-in-out infinite, glow-3 12s ease-in-out infinite;
+      animation-delay: -15s, -9s;
+    }
+
+    .firefly-5 {
+      width: 4px; height: 4px;
+      background: #f5d47a;
+      box-shadow: 0 0 4px 2px rgba(245,212,122,0.75), 0 0 12px 6px rgba(245,212,122,0.3), 0 0 26px 13px rgba(245,212,122,0.1);
+      top: 68%; left: 15%;
+      animation: drift-5 25s ease-in-out infinite, glow-2 9s ease-in-out infinite;
+      animation-delay: -5s, -7s;
+    }
+
+    .firefly-6 {
+      width: 3px; height: 3px;
+      background: #e8c547;
+      box-shadow: 0 0 3px 1px rgba(232,197,71,0.65), 0 0 10px 5px rgba(232,197,71,0.2), 0 0 18px 9px rgba(232,197,71,0.07);
+      top: 35%; left: 82%;
+      animation: drift-6 33s ease-in-out infinite, glow-1 11s ease-in-out infinite;
+      animation-delay: -18s, -5s;
+    }
+
+    .firefly-7 {
+      width: 2px; height: 2px;
+      background: #d4c455;
+      box-shadow: 0 0 2px 1px rgba(212,196,85,0.4), 0 0 6px 3px rgba(212,196,85,0.12);
+      top: 78%; left: 55%;
+      animation: drift-3 37s ease-in-out infinite, glow-3 13s ease-in-out infinite;
+      animation-delay: -25s, -8s;
+    }
+
+    .firefly-8 {
+      width: 3px; height: 3px;
+      background: #f0cc5e;
+      box-shadow: 0 0 3px 2px rgba(240,204,94,0.7), 0 0 10px 5px rgba(240,204,94,0.25), 0 0 20px 10px rgba(240,204,94,0.08);
+      top: 25%; left: 45%;
+      animation: drift-2 21s ease-in-out infinite, glow-2 7.5s ease-in-out infinite;
+      animation-delay: -10s, -3s;
+    }
+
+    /* Drift keyframes - organic float paths */
+    @keyframes drift-1 {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(35px, -20px); }
+      40%  { transform: translate(15px, -45px); }
+      60%  { transform: translate(-25px, -30px); }
+      80%  { transform: translate(-10px, 10px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes drift-2 {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(-40px, 15px); }
+      50%  { transform: translate(-20px, -35px); }
+      75%  { transform: translate(30px, -15px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes drift-3 {
+      0%   { transform: translate(0, 0); }
+      16%  { transform: translate(20px, 25px); }
+      33%  { transform: translate(50px, 10px); }
+      50%  { transform: translate(35px, -30px); }
+      66%  { transform: translate(-10px, -40px); }
+      83%  { transform: translate(-25px, -10px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes drift-4 {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(-15px, -35px); }
+      45%  { transform: translate(25px, -50px); }
+      70%  { transform: translate(40px, -10px); }
+      90%  { transform: translate(10px, 20px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes drift-5 {
+      0%   { transform: translate(0, 0); }
+      30%  { transform: translate(45px, 20px); }
+      55%  { transform: translate(25px, -25px); }
+      80%  { transform: translate(-20px, -40px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes drift-6 {
+      0%   { transform: translate(0, 0); }
+      18%  { transform: translate(-30px, -15px); }
+      36%  { transform: translate(-50px, 20px); }
+      54%  { transform: translate(-20px, 40px); }
+      72%  { transform: translate(15px, 25px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* Glow keyframes - firefly bioluminescence breathing */
+    @keyframes glow-1 {
+      0%   { opacity: 0; }
+      15%  { opacity: 0.1; }
+      40%  { opacity: 0.8; }
+      60%  { opacity: 0.6; }
+      80%  { opacity: 0.15; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes glow-2 {
+      0%   { opacity: 0; }
+      20%  { opacity: 0.05; }
+      45%  { opacity: 0.7; }
+      70%  { opacity: 0.4; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes glow-3 {
+      0%   { opacity: 0; }
+      30%  { opacity: 0.5; }
+      50%  { opacity: 0.3; }
+      75%  { opacity: 0.6; }
+      100% { opacity: 0; }
+    }
+
+    /* Accessibility: reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .panel-image {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
+      }
+      .firefly {
+        animation: none !important;
+        opacity: 0.4;
+      }
+      .firefly-4, .firefly-7 {
+        opacity: 0;
       }
     }
 

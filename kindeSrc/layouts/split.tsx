@@ -105,50 +105,37 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           }}
         />
 
-        {/* Vignette overlay - stronger left edge for panel overlap */}
+        {/* Fireflies */}
         <div
           style={{
             position: "absolute",
             inset: "0",
-            zIndex: 1,
-            background: [
-              "linear-gradient(to right, rgba(22, 23, 23, 0.85) 0%, rgba(22, 23, 23, 0.4) 12%, transparent 35%)",
-              "linear-gradient(to top, rgba(22, 23, 23, 0.5) 0%, transparent 40%)",
-              "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
-            ].join(", "),
+            overflow: "hidden",
             pointerEvents: "none",
-          }}
-        />
-
-        {/* Bottom text - sits in the vignette zone */}
-        <p
-          style={{
-            position: "absolute",
-            bottom: "2rem",
-            left: "2.5rem",
-            zIndex: 3,
-            fontSize: "0.875rem",
-            fontWeight: 400,
-            color: "rgba(232, 230, 227, 0.4)",
-            letterSpacing: "0.02em",
-            lineHeight: 1.4,
+            zIndex: 2,
           }}
         >
-          The zen garden your focus time deserves.
-        </p>
+          <div className="firefly firefly-1" />
+          <div className="firefly firefly-2" />
+          <div className="firefly firefly-3" />
+          <div className="firefly firefly-4" />
+          <div className="firefly firefly-5" />
+          <div className="firefly firefly-6" />
+          <div className="firefly firefly-7" />
+          <div className="firefly firefly-8" />
+        </div>
 
-        {/* Enso watermark - bottom right */}
-        <img
-          src="https://cdn.focusedzen.com/login/enso-logo.png"
-          alt=""
+        {/* Vignette overlay */}
+        <div
           style={{
             position: "absolute",
-            bottom: "1.75rem",
-            right: "2rem",
-            width: "32px",
-            height: "32px",
-            opacity: 0.15,
+            inset: "0",
             zIndex: 3,
+            background: [
+              "linear-gradient(to right, rgba(22, 23, 23, 0.85) 0%, rgba(22, 23, 23, 0.4) 12%, transparent 35%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.65) 0%, rgba(22, 23, 23, 0.2) 25%, transparent 50%)",
+              "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
+            ].join(", "),
             pointerEvents: "none",
           }}
         />
