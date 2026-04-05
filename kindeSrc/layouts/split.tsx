@@ -93,7 +93,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           }}
         />
 
-        {/* Bottom content: enso logo + tagline */}
+        {/* Bottom content: enso logo */}
         <div
           style={{
             position: "absolute",
@@ -101,35 +101,18 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             left: "50%",
             transform: "translateX(-50%)",
             zIndex: 3,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "1rem",
           }}
         >
           <img
             className="panel-logo"
             src="https://focusedzen.com/login_assets/enso-logo.png"
-            alt="FocusedZen"
+            alt=""
             style={{
               width: "64px",
               height: "64px",
               opacity: 0.3,
             }}
           />
-          <p
-            className="panel-tagline"
-            style={{
-              fontSize: "0.85rem",
-              fontWeight: 500,
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              color: "rgba(232, 230, 227, 0.5)",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Relief. Presence. Clarity.
-          </p>
         </div>
       </div>
     </div>

@@ -144,6 +144,39 @@ export function getStyles(): string {
       margin-bottom: 1.25rem;
     }
 
+    /* Widget container breathing room */
+    [data-kinde-widget] {
+      padding: 0.5rem 0 !important;
+    }
+
+    /* Social button row spacing */
+    [data-kinde-layout-social-buttons] {
+      gap: 0.75rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    /* Individual social buttons - taller */
+    [data-kinde-button][data-kinde-button-variant="secondary"] {
+      min-height: 3rem !important;
+    }
+
+    /* Primary button height */
+    [data-kinde-button][data-kinde-button-variant="primary"] {
+      min-height: 3rem !important;
+      margin-top: 0.25rem !important;
+    }
+
+    /* Input field height */
+    [data-kinde-control-select-text] {
+      min-height: 3rem !important;
+      padding: 0.75rem 1rem !important;
+    }
+
+    /* Space below footer links */
+    [data-kinde-layout-footer] {
+      margin-top: 1.5rem !important;
+    }
+
     /* Powered by Kinde footer */
     [data-kinde-footer],
     [data-kinde-powered-by] {
