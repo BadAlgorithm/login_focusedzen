@@ -120,48 +120,38 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           }}
         />
 
-        {/* Bottom bar: frosted glass with tagline + enso */}
-        <div
+        {/* Bottom text - sits in the vignette zone */}
+        <p
           style={{
             position: "absolute",
             bottom: "2rem",
-            left: "2rem",
-            right: "2rem",
+            left: "2.5rem",
             zIndex: 3,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            background: "rgba(22, 23, 23, 0.45)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            borderRadius: "14px",
-            border: "1px solid rgba(255, 255, 255, 0.06)",
-            padding: "1rem 1.25rem",
+            fontSize: "0.875rem",
+            fontWeight: 400,
+            color: "rgba(232, 230, 227, 0.4)",
+            letterSpacing: "0.02em",
+            lineHeight: 1.4,
           }}
         >
-          <p
-            style={{
-              fontSize: "0.9rem",
-              fontWeight: 500,
-              color: "rgba(232, 230, 227, 0.75)",
-              letterSpacing: "-0.01em",
-              lineHeight: 1.4,
-            }}
-          >
-            The zen garden your focus time deserves.
-          </p>
-          <img
-            src="https://cdn.focusedzen.com/login/enso-logo.png"
-            alt=""
-            style={{
-              width: "36px",
-              height: "36px",
-              opacity: 0.5,
-              marginLeft: "1rem",
-              flexShrink: 0,
-            }}
-          />
-        </div>
+          The zen garden your focus time deserves.
+        </p>
+
+        {/* Enso watermark - bottom right */}
+        <img
+          src="https://cdn.focusedzen.com/login/enso-logo.png"
+          alt=""
+          style={{
+            position: "absolute",
+            bottom: "1.75rem",
+            right: "2rem",
+            width: "32px",
+            height: "32px",
+            opacity: 0.15,
+            zIndex: 3,
+            pointerEvents: "none",
+          }}
+        />
       </div>
     </div>
   );
