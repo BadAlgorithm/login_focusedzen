@@ -11,19 +11,20 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
     <div
       style={{
         display: "flex",
-        minHeight: "100vh",
+        minHeight: "100dvh",
         width: "100%",
       }}
     >
       {/* Left side: login form */}
       <div
+        data-fz-panel="left"
         style={{
           flex: 1,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          padding: "2rem",
+          padding: "3rem",
         }}
       >
         {/* Logo */}
@@ -36,61 +37,100 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
         {children}
       </div>
 
-      {/* Right side: accent panel */}
+      {/* Right side: garden image panel */}
       <div
+        data-fz-panel="right"
         style={{
           flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          background: "linear-gradient(135deg, #1a2e23 0%, #0f1a14 50%, #1a1520 100%)",
-          borderRadius: "1.5rem",
-          margin: "0.75rem",
-          padding: "3rem",
           position: "relative",
           overflow: "hidden",
+          borderRadius: "1.5rem",
+          margin: "0.75rem",
+          border: "1px solid #2A2B2B",
+          background: "linear-gradient(135deg, #1a2e23 0%, #0f1a14 50%, #1a1520 100%)",
         }}
       >
-        {/* Subtle glow accent */}
+        {/* Background image */}
+        <img
+          className="panel-image"
+          src="https://focusedzen.com/login_assets/garden-entrance.webp"
+          alt=""
+          style={{
+            position: "absolute",
+            inset: "0",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 35%",
+            zIndex: 0,
+          }}
+        />
+
+        {/* Vignette overlay */}
         <div
           style={{
             position: "absolute",
-            top: "30%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "300px",
-            height: "300px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(92, 138, 115, 0.15) 0%, transparent 70%)",
+            inset: "0",
+            zIndex: 1,
+            background: [
+              "radial-gradient(ellipse at center 40%, transparent 30%, rgba(22, 23, 23, 0.7) 100%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.85) 0%, transparent 40%)",
+              "linear-gradient(to bottom, rgba(22, 23, 23, 0.4) 0%, transparent 25%)",
+            ].join(", "),
+            boxShadow: "inset 0 0 80px 20px rgba(22, 23, 23, 0.5)",
             pointerEvents: "none",
           }}
         />
-        <p
+
+        {/* Subtle sage glow over gate area */}
+        <div
           style={{
-            fontSize: "1.5rem",
-            fontWeight: 500,
-            color: "rgba(255, 255, 255, 0.85)",
-            textAlign: "center",
-            lineHeight: 1.6,
-            maxWidth: "360px",
-            position: "relative",
-            zIndex: 1,
+            position: "absolute",
+            inset: "0",
+            zIndex: 2,
+            background: "radial-gradient(ellipse at 50% 35%, rgba(92, 138, 115, 0.08) 0%, transparent 60%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Bottom content: enso logo + tagline */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "2.5rem",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 3,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1rem",
           }}
         >
-          Structured permission to be fully present.
-        </p>
-        <p
-          style={{
-            fontSize: "0.9rem",
-            color: "rgba(255, 255, 255, 0.35)",
-            marginTop: "1.5rem",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          Relief. Presence. Clarity.
-        </p>
+          <img
+            className="panel-logo"
+            src="https://focusedzen.com/login_assets/enso-logo.png"
+            alt="FocusedZen"
+            style={{
+              width: "64px",
+              height: "64px",
+              opacity: 0.3,
+            }}
+          />
+          <p
+            className="panel-tagline"
+            style={{
+              fontSize: "0.85rem",
+              fontWeight: 500,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: "rgba(232, 230, 227, 0.5)",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Relief. Presence. Clarity.
+          </p>
+        </div>
       </div>
     </div>
   );

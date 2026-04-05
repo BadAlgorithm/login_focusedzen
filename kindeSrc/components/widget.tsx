@@ -17,17 +17,17 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        maxWidth: "420px",
-        padding: "0 2rem",
+        maxWidth: "400px",
       }}
     >
       <h1
         style={{
           fontSize: "1.75rem",
           fontWeight: 600,
-          color: "#e0e0e0",
+          color: "#E8E6E3",
           marginBottom: "0.5rem",
           textAlign: "center",
+          letterSpacing: "-0.02em",
         }}
       >
         {heading}
@@ -36,8 +36,8 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
         <p
           style={{
             fontSize: "0.95rem",
-            color: "rgba(255, 255, 255, 0.5)",
-            marginBottom: "2rem",
+            color: "#ABABAB",
+            marginBottom: "2.5rem",
             textAlign: "center",
             lineHeight: 1.5,
           }}
