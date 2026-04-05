@@ -19,35 +19,66 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
       <div
         data-fz-panel="left"
         style={{
-          flex: 1,
+          flex: "0 0 480px",
+          maxWidth: "480px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
-          padding: "3rem",
+          alignItems: "flex-start",
+          padding: "3rem 3.5rem",
         }}
       >
-        {/* Logo */}
-        <div style={{ marginBottom: "2.5rem" }}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 32" width="180" height="32">
-            <text x="0" y="24" fontFamily="Manrope, system-ui, sans-serif" fontSize="24" fontWeight="400" fill="#5C8A73">Focused</text>
-            <text x="93" y="24" fontFamily="Manrope, system-ui, sans-serif" fontSize="24" fontWeight="700" fill="#C45A7D">Zen</text>
-          </svg>
+        {/* Logo: enso circle + font-based FocusedZen */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.75rem",
+            marginBottom: "3rem",
+          }}
+        >
+          <img
+            src="https://cdn.focusedzen.com/login/enso-logo.png"
+            alt=""
+            style={{
+              width: "36px",
+              height: "36px",
+            }}
+          />
+          <span style={{ display: "flex", alignItems: "baseline" }}>
+            <span
+              style={{
+                fontFamily: "'Manrope', system-ui, sans-serif",
+                fontSize: "1.25rem",
+                fontWeight: 400,
+                color: "#5C8A73",
+              }}
+            >
+              Focused
+            </span>
+            <span
+              style={{
+                fontFamily: "'Manrope', system-ui, sans-serif",
+                fontSize: "1.25rem",
+                fontWeight: 700,
+                color: "#C45A7D",
+              }}
+            >
+              Zen
+            </span>
+          </span>
         </div>
         {children}
       </div>
 
-      {/* Right side: garden image panel */}
+      {/* Right side: full-bleed garden image */}
       <div
         data-fz-panel="right"
         style={{
           flex: 1,
           position: "relative",
           overflow: "hidden",
-          borderRadius: "1.5rem",
-          margin: "0.75rem",
-          border: "1px solid #2A2B2B",
-          background: "linear-gradient(135deg, #1a2e23 0%, #0f1a14 50%, #1a1520 100%)",
+          background: "#1a2e23",
         }}
       >
         {/* Background image */}
@@ -73,46 +104,38 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             inset: "0",
             zIndex: 1,
             background: [
-              "radial-gradient(ellipse at center 40%, transparent 30%, rgba(22, 23, 23, 0.7) 100%)",
-              "linear-gradient(to top, rgba(22, 23, 23, 0.85) 0%, transparent 40%)",
-              "linear-gradient(to bottom, rgba(22, 23, 23, 0.4) 0%, transparent 25%)",
+              "linear-gradient(to right, rgba(22, 23, 23, 0.6) 0%, transparent 30%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.7) 0%, transparent 50%)",
+              "linear-gradient(to bottom, rgba(22, 23, 23, 0.3) 0%, transparent 20%)",
             ].join(", "),
-            boxShadow: "inset 0 0 80px 20px rgba(22, 23, 23, 0.5)",
             pointerEvents: "none",
           }}
         />
 
-        {/* Subtle sage glow over gate area */}
+        {/* Marketing tagline overlay */}
         <div
+          className="panel-tagline"
           style={{
             position: "absolute",
-            inset: "0",
-            zIndex: 2,
-            background: "radial-gradient(ellipse at 50% 35%, rgba(92, 138, 115, 0.08) 0%, transparent 60%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        {/* Bottom content: enso logo */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "2.5rem",
-            left: "50%",
-            transform: "translateX(-50%)",
+            bottom: "3rem",
+            left: "3rem",
+            right: "3rem",
             zIndex: 3,
           }}
         >
-          <img
-            className="panel-logo"
-            src="https://cdn.focusedzen.com/login/enso-logo.png"
-            alt=""
+          <p
             style={{
-              width: "64px",
-              height: "64px",
-              opacity: 0.3,
+              fontSize: "1.75rem",
+              fontWeight: 600,
+              color: "#E8E6E3",
+              lineHeight: 1.3,
+              letterSpacing: "-0.02em",
+              maxWidth: "400px",
+              textShadow: "0 2px 20px rgba(0,0,0,0.5)",
             }}
-          />
+          >
+            The zen garden your focus time deserves.
+          </p>
         </div>
       </div>
     </div>

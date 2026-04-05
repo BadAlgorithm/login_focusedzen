@@ -14,19 +14,15 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
         width: "100%",
-        maxWidth: "400px",
       }}
     >
       <h1
         style={{
-          fontSize: "1.75rem",
+          fontSize: "1.5rem",
           fontWeight: 600,
           color: "#E8E6E3",
           marginBottom: "0.5rem",
-          textAlign: "center",
           letterSpacing: "-0.02em",
         }}
       >
@@ -35,10 +31,9 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
       {description && (
         <p
           style={{
-            fontSize: "0.95rem",
+            fontSize: "0.9rem",
             color: "#ABABAB",
-            marginBottom: "2.5rem",
-            textAlign: "center",
+            marginBottom: "2rem",
             lineHeight: 1.5,
           }}
         >

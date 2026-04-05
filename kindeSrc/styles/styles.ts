@@ -41,13 +41,14 @@ export function getStyles(): string {
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Primary button - gradient matching webapp */
+    /* Primary button */
     [data-kinde-button][data-kinde-button-variant="primary"] {
       background: linear-gradient(to bottom, #5C8A73, #4e7862) !important;
       color: #FFFFFF !important;
       border: none !important;
       font-weight: 600;
       letter-spacing: 0.02em;
+      min-height: 2.75rem !important;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.3) !important;
       transition: filter 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
                   transform 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -66,6 +67,7 @@ export function getStyles(): string {
       background-color: #1E1F1F !important;
       color: #E8E6E3 !important;
       border: 1px solid #2A2B2B !important;
+      min-height: 2.75rem !important;
       box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03) !important;
       transition: border-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
                   background-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -90,6 +92,8 @@ export function getStyles(): string {
       background-color: #161717 !important;
       border: 1px solid #2A2B2B !important;
       color: #E8E6E3 !important;
+      min-height: 2.75rem !important;
+      padding: 0.625rem 0.875rem !important;
       box-shadow: inset 0 1px 2px rgba(0,0,0,0.3) !important;
       transition: border-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
                   box-shadow 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -109,7 +113,8 @@ export function getStyles(): string {
     [data-kinde-control-label] {
       color: #ABABAB !important;
       font-weight: 500;
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
+      margin-bottom: 0.375rem !important;
     }
 
     /* Links */
@@ -128,9 +133,9 @@ export function getStyles(): string {
     [data-kinde-choice-separator] {
       color: #7A7A7A !important;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
       letter-spacing: 0.1em;
-      margin: 1.5rem 0 !important;
+      margin: 1.25rem 0 !important;
     }
 
     [data-kinde-choice-separator]::before,
@@ -141,57 +146,42 @@ export function getStyles(): string {
 
     /* Form field spacing */
     [data-kinde-form-field] {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
-    /* Widget container breathing room */
+    /* Widget full width */
     [data-kinde-widget] {
-      padding: 0.5rem 0 !important;
+      width: 100% !important;
     }
 
-    /* Social button row spacing */
+    /* Social button row */
     [data-kinde-layout-social-buttons] {
-      gap: 0.75rem !important;
-      margin-bottom: 0.5rem !important;
+      gap: 0.5rem !important;
     }
 
-    /* Individual social buttons - taller */
-    [data-kinde-button][data-kinde-button-variant="secondary"] {
-      min-height: 3rem !important;
-    }
-
-    /* Primary button height */
-    [data-kinde-button][data-kinde-button-variant="primary"] {
-      min-height: 3rem !important;
-      margin-top: 0.25rem !important;
-    }
-
-    /* Input field height */
-    [data-kinde-control-select-text] {
-      min-height: 3rem !important;
-      padding: 0.75rem 1rem !important;
-    }
-
-    /* Space below footer links */
+    /* Footer links */
     [data-kinde-layout-footer] {
-      margin-top: 1.5rem !important;
+      margin-top: 1.25rem !important;
+      font-size: 0.8125rem !important;
     }
 
-    /* Powered by Kinde footer */
+    /* Powered by Kinde - subtle and small */
     [data-kinde-footer],
     [data-kinde-powered-by] {
-      opacity: 0.4 !important;
+      opacity: 0.3 !important;
+      font-size: 0.6875rem !important;
+      margin-top: 0.75rem !important;
       transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     [data-kinde-footer]:hover,
     [data-kinde-powered-by]:hover {
-      opacity: 0.6 !important;
+      opacity: 0.5 !important;
     }
 
     /* Animations */
     @keyframes imageReveal {
-      from { transform: scale(1.05); opacity: 0; }
+      from { transform: scale(1.03); opacity: 0; }
       to { transform: scale(1.0); opacity: 1; }
     }
 
@@ -209,13 +199,8 @@ export function getStyles(): string {
       opacity: 0;
     }
 
-    .panel-logo {
-      animation: textFadeIn 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s forwards;
-      opacity: 0;
-    }
-
     @media (prefers-reduced-motion: reduce) {
-      .panel-image, .panel-tagline, .panel-logo {
+      .panel-image, .panel-tagline {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -228,17 +213,16 @@ export function getStyles(): string {
         display: none !important;
       }
       [data-fz-panel="left"] {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
         padding: 2rem 1.5rem !important;
+        align-items: center !important;
       }
     }
 
     @media (max-width: 480px) {
       [data-fz-panel="left"] {
-        padding: 1.5rem 1rem !important;
-      }
-      [data-fz-panel="left"] svg {
-        width: 150px;
-        height: auto;
+        padding: 1.5rem 1.25rem !important;
       }
     }
   `;
