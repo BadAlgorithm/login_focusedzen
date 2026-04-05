@@ -53,7 +53,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
         {/* Background image */}
         <img
           className="panel-image"
-          src="https://focusedzen.com/login_assets/garden-entrance.webp"
+          src="https://focused-zen-media.b-cdn.net/login/garden-entrance.webp"
           alt=""
           style={{
             position: "absolute",
@@ -105,7 +105,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
         >
           <img
             className="panel-logo"
-            src="https://focusedzen.com/login_assets/enso-logo.png"
+            src="https://focused-zen-media.b-cdn.net/login/enso-logo.png"
             alt=""
             style={{
               width: "64px",
