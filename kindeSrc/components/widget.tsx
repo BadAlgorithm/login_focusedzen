@@ -19,11 +19,11 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
     >
       <h1
         style={{
-          fontSize: "1.5rem",
+          fontSize: "1.75rem",
           fontWeight: 600,
           color: "#E8E6E3",
-          marginBottom: "0.5rem",
-          letterSpacing: "-0.02em",
+          marginBottom: "0.375rem",
+          letterSpacing: "-0.025em",
         }}
       >
         {heading}
@@ -31,9 +31,9 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
       {description && (
         <p
           style={{
-            fontSize: "0.9rem",
+            fontSize: "0.875rem",
             color: "#ABABAB",
-            marginBottom: "2rem",
+            marginBottom: "1.75rem",
             lineHeight: 1.5,
           }}
         >

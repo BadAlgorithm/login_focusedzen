@@ -62,20 +62,21 @@ export function getStyles(): string {
       transform: scale(0.98);
     }
 
-    /* Social login buttons */
+    /* Social login buttons - ghost style */
     [data-kinde-button][data-kinde-button-variant="secondary"] {
-      background-color: #1E1F1F !important;
+      background-color: transparent !important;
       color: #E8E6E3 !important;
-      border: 1px solid #2A2B2B !important;
-      min-height: 2.75rem !important;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03) !important;
+      border: 1px solid #252626 !important;
+      min-height: 2.5rem !important;
+      font-size: 0.875rem !important;
+      box-shadow: none !important;
       transition: border-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
                   background-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     [data-kinde-button][data-kinde-button-variant="secondary"]:hover {
       border-color: #323333 !important;
-      background-color: #252626 !important;
+      background-color: rgba(255, 255, 255, 0.02) !important;
     }
 
     /* Fix dark social icons (Apple logo) - invert to white */
@@ -135,7 +136,7 @@ export function getStyles(): string {
       text-transform: uppercase;
       font-size: 0.6875rem;
       letter-spacing: 0.1em;
-      margin: 1.25rem 0 !important;
+      margin: 1rem 0 !important;
     }
 
     [data-kinde-choice-separator]::before,
@@ -156,27 +157,37 @@ export function getStyles(): string {
 
     /* Social button row */
     [data-kinde-layout-social-buttons] {
-      gap: 0.5rem !important;
+      gap: 0.375rem !important;
     }
 
     /* Footer links */
     [data-kinde-layout-footer] {
-      margin-top: 1.25rem !important;
+      margin-top: 1.5rem !important;
       font-size: 0.8125rem !important;
     }
 
-    /* Powered by Kinde - subtle and small */
+    /* Powered by Kinde - monochrome footnote */
     [data-kinde-footer],
     [data-kinde-powered-by] {
-      opacity: 0.3 !important;
-      font-size: 0.6875rem !important;
-      margin-top: 0.75rem !important;
+      opacity: 0.25 !important;
+      font-size: 0.625rem !important;
+      margin-top: 1.5rem !important;
+      filter: grayscale(1) !important;
+      letter-spacing: 0.05em !important;
       transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     [data-kinde-footer]:hover,
     [data-kinde-powered-by]:hover {
-      opacity: 0.5 !important;
+      opacity: 0.4 !important;
+    }
+
+    [data-kinde-footer] img,
+    [data-kinde-powered-by] img,
+    [data-kinde-footer] svg,
+    [data-kinde-powered-by] svg {
+      filter: grayscale(1) brightness(0.7) !important;
+      max-height: 12px !important;
     }
 
     /* Animations */
@@ -185,22 +196,12 @@ export function getStyles(): string {
       to { transform: scale(1.0); opacity: 1; }
     }
 
-    @keyframes textFadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .panel-image {
       animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
-    .panel-tagline {
-      animation: textFadeIn 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.6s forwards;
-      opacity: 0;
-    }
-
     @media (prefers-reduced-motion: reduce) {
-      .panel-image, .panel-tagline {
+      .panel-image {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -217,6 +218,18 @@ export function getStyles(): string {
         max-width: 100% !important;
         padding: 2rem 1.5rem !important;
         align-items: center !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+    }
+
+    /* Smaller desktop */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      [data-fz-panel="left"] {
+        flex: 0 0 420px !important;
+        max-width: 420px !important;
+        padding: 2.5rem 2.5rem !important;
+        border-radius: 0 16px 16px 0 !important;
       }
     }
 

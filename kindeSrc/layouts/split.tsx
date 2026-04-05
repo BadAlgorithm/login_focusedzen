@@ -13,19 +13,25 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
         display: "flex",
         minHeight: "100dvh",
         width: "100%",
+        overflow: "hidden",
       }}
     >
-      {/* Left side: login form */}
+      {/* Left side: login form - overlaps image */}
       <div
         data-fz-panel="left"
         style={{
-          flex: "0 0 480px",
-          maxWidth: "480px",
+          flex: "0 0 500px",
+          maxWidth: "500px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "flex-start",
-          padding: "3rem 3.5rem",
+          padding: "3rem 3rem",
+          position: "relative",
+          zIndex: 2,
+          background: "#161717",
+          borderRadius: "0 24px 24px 0",
+          boxShadow: "8px 0 32px -4px rgba(0, 0, 0, 0.5), 2px 0 8px -2px rgba(0, 0, 0, 0.3)",
         }}
       >
         {/* Logo: enso circle + font-based FocusedZen */}
@@ -33,24 +39,24 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.75rem",
-            marginBottom: "3rem",
+            gap: "0.625rem",
+            marginBottom: "2.5rem",
           }}
         >
           <img
             src="https://cdn.focusedzen.com/login/enso-logo.png"
             alt=""
             style={{
-              width: "36px",
-              height: "36px",
+              width: "44px",
+              height: "44px",
             }}
           />
           <span style={{ display: "flex", alignItems: "baseline" }}>
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "1.25rem",
-                fontWeight: 400,
+                fontSize: "1.5rem",
+                fontWeight: 500,
                 color: "#5C8A73",
               }}
             >
@@ -59,7 +65,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "1.25rem",
+                fontSize: "1.5rem",
                 fontWeight: 700,
                 color: "#C45A7D",
               }}
@@ -71,20 +77,22 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
         {children}
       </div>
 
-      {/* Right side: full-bleed garden image */}
+      {/* Right side: garden image - tucked under left panel */}
       <div
         data-fz-panel="right"
         style={{
           flex: 1,
           position: "relative",
           overflow: "hidden",
+          marginLeft: "-32px",
+          zIndex: 1,
           background: "#1a2e23",
         }}
       >
         {/* Background image */}
         <img
           className="panel-image"
-          src="https://cdn.focusedzen.com/login/garden-entrance.webp"
+          src="https://cdn.focusedzen.com/login/garden-entrance-2x.webp"
           alt=""
           style={{
             position: "absolute",
@@ -92,51 +100,25 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "center 35%",
+            objectPosition: "center 30%",
             zIndex: 0,
           }}
         />
 
-        {/* Vignette overlay */}
+        {/* Vignette overlay - stronger left edge for panel overlap */}
         <div
           style={{
             position: "absolute",
             inset: "0",
             zIndex: 1,
             background: [
-              "linear-gradient(to right, rgba(22, 23, 23, 0.6) 0%, transparent 30%)",
-              "linear-gradient(to top, rgba(22, 23, 23, 0.7) 0%, transparent 50%)",
-              "linear-gradient(to bottom, rgba(22, 23, 23, 0.3) 0%, transparent 20%)",
+              "linear-gradient(to right, rgba(22, 23, 23, 0.85) 0%, rgba(22, 23, 23, 0.4) 12%, transparent 35%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.5) 0%, transparent 40%)",
+              "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
             ].join(", "),
             pointerEvents: "none",
           }}
         />
-
-        {/* Marketing tagline overlay */}
-        <div
-          className="panel-tagline"
-          style={{
-            position: "absolute",
-            bottom: "3rem",
-            left: "3rem",
-            right: "3rem",
-            zIndex: 3,
-          }}
-        >
-          <p
-            style={{
-              fontSize: "1.75rem",
-              fontWeight: 600,
-              color: "#E8E6E3",
-              lineHeight: 1.3,
-              letterSpacing: "-0.02em",
-              maxWidth: "400px",
-              textShadow: "0 2px 20px rgba(0,0,0,0.5)",
-            }}
-          >
-            The zen garden your focus time deserves.
-          </p>
-        </div>
       </div>
     </div>
   );
