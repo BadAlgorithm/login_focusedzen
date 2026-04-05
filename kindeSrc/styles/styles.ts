@@ -167,27 +167,36 @@ export function getStyles(): string {
     }
 
     /* Powered by Kinde - monochrome footnote */
-    [data-kinde-footer],
-    [data-kinde-powered-by] {
-      opacity: 0.25 !important;
+    [data-kinde-layout-widget-branding],
+    .kinde-layout-widget-branding {
+      opacity: 0.2 !important;
       font-size: 0.625rem !important;
       margin-top: 1.5rem !important;
       filter: grayscale(1) !important;
-      letter-spacing: 0.05em !important;
       transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
-    [data-kinde-footer]:hover,
-    [data-kinde-powered-by]:hover {
-      opacity: 0.4 !important;
+    [data-kinde-layout-widget-branding]:hover,
+    .kinde-layout-widget-branding:hover {
+      opacity: 0.35 !important;
     }
 
-    [data-kinde-footer] img,
-    [data-kinde-powered-by] img,
-    [data-kinde-footer] svg,
-    [data-kinde-powered-by] svg {
+    [data-kinde-layout-widget-branding] *,
+    .kinde-layout-widget-branding *,
+    .kinde-branding,
+    .kinde-branding * {
       filter: grayscale(1) brightness(0.7) !important;
-      max-height: 12px !important;
+      color: #7A7A7A !important;
+      font-size: 0.625rem !important;
+      font-weight: 400 !important;
+    }
+
+    .kinde-branding img,
+    .kinde-branding svg,
+    [data-kinde-layout-widget-branding] img,
+    [data-kinde-layout-widget-branding] svg {
+      max-height: 11px !important;
+      filter: grayscale(1) brightness(0.5) !important;
     }
 
     /* Animations */

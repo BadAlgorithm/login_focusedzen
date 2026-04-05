@@ -119,6 +119,22 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             pointerEvents: "none",
           }}
         />
+
+        {/* Enso watermark - bottom right */}
+        <img
+          src="https://cdn.focusedzen.com/login/enso-logo.png"
+          alt=""
+          style={{
+            position: "absolute",
+            bottom: "2rem",
+            right: "2rem",
+            width: "48px",
+            height: "48px",
+            opacity: 0.2,
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
       </div>
     </div>
   );
