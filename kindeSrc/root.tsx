@@ -38,11 +38,9 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
           }
           ${getStyles()}
         ` }} />
+        {getKindeCSRF()}
       </head>
       <body>
-        <div style={{ position: "absolute", width: 0, height: 0, overflow: "hidden", opacity: 0 }}>
-          {getKindeCSRF()}
-        </div>
         <div data-kinde-root="true">{children}</div>
         {getKindeRequiredJS()}
       </body>
