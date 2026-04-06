@@ -26,8 +26,10 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex, nofollow" />
+        <meta content={getKindeCSRF()} name="csrf-token" />
         <title>{context.widget.content.pageTitle || "FocusedZen"}</title>
         {getKindeRequiredCSS()}
+        {getKindeRequiredJS()}
         <style nonce={getKindeNonce()} dangerouslySetInnerHTML={{ __html: `
           @font-face {
             font-family: 'Manrope';
