@@ -19,8 +19,8 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
     >
       <h1
         style={{
-          fontSize: "1.75rem",
-          fontWeight: 600,
+          fontSize: "1.375rem",
+          fontWeight: 500,
           color: "#E8E6E3",
           marginBottom: "0.375rem",
           letterSpacing: "-0.025em",

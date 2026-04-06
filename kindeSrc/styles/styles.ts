@@ -49,7 +49,7 @@ export function getStyles(): string {
       font-weight: 600;
       letter-spacing: 0.02em;
       min-height: 2.75rem !important;
-      margin-top: 0.75rem !important;
+      margin-top: 1rem !important;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.3) !important;
       transition: filter 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
                   transform 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -133,8 +133,9 @@ export function getStyles(): string {
     }
 
     /* OR divider */
-    [data-kinde-choice-separator] {
-      color: #7A7A7A !important;
+    [data-kinde-choice-separator],
+    .kinde-choice-separator {
+      color: #ABABAB !important;
       text-transform: uppercase;
       font-size: 0.6875rem;
       letter-spacing: 0.1em;
@@ -142,9 +143,11 @@ export function getStyles(): string {
     }
 
     [data-kinde-choice-separator]::before,
-    [data-kinde-choice-separator]::after {
-      background-color: #2A2B2B !important;
-      border-color: #2A2B2B !important;
+    [data-kinde-choice-separator]::after,
+    .kinde-choice-separator::before,
+    .kinde-choice-separator::after {
+      background-color: #323333 !important;
+      border-color: #323333 !important;
     }
 
     /* Form field spacing */
@@ -164,15 +167,18 @@ export function getStyles(): string {
     }
 
     /* Footer links - No account? Create one */
-    [data-kinde-layout-footer] {
-      margin-top: 2rem !important;
+    [data-kinde-layout-footer],
+    .kinde-fallback-action {
+      margin-top: 2.5rem !important;
       font-size: 0.8125rem !important;
       color: #7A7A7A !important;
       text-align: center !important;
       width: 100% !important;
     }
 
-    [data-kinde-layout-footer] [data-kinde-text-link] {
+    [data-kinde-layout-footer] [data-kinde-text-link],
+    .kinde-fallback-action a,
+    .kinde-fallback-action [data-kinde-text-link] {
       color: #5C8A73 !important;
       font-weight: 500 !important;
     }
