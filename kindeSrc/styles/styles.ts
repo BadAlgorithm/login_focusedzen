@@ -235,65 +235,74 @@ export function getStyles(): string {
       animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
-    /* ---- Mist / fog layers (SVG turbulence for organic shapes) ---- */
+    /* ---- Mist / fog layers (CSS blur + radial blobs) ---- */
 
     .mist {
       position: absolute;
       pointer-events: none;
       z-index: 2;
-      border-radius: 50%;
-      mix-blend-mode: screen;
+      will-change: transform;
     }
 
     .mist-1 {
-      bottom: -15%;
+      bottom: -10%;
       left: -20%;
       width: 140%;
-      height: 55%;
-      background: radial-gradient(ellipse at 50% 50%, rgba(190,210,205,0.2) 0%, transparent 70%);
-      filter: url(#fog-1);
+      height: 50%;
+      background:
+        radial-gradient(ellipse 50% 60% at 25% 70%, rgba(200,220,215,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 70% 80%, rgba(190,215,208,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 40% at 50% 60%, rgba(195,218,212,0.2) 0%, transparent 60%);
+      filter: blur(30px);
+      mix-blend-mode: screen;
       animation: mist-float-1 80s ease-in-out infinite;
     }
 
     .mist-2 {
-      bottom: -10%;
-      left: 10%;
+      bottom: -5%;
+      left: 0%;
       width: 120%;
-      height: 45%;
-      background: radial-gradient(ellipse at 50% 50%, rgba(185,208,200,0.15) 0%, transparent 65%);
-      filter: url(#fog-2);
+      height: 40%;
+      background:
+        radial-gradient(ellipse 45% 55% at 40% 75%, rgba(195,215,210,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at 80% 65%, rgba(185,210,202,0.2) 0%, transparent 60%);
+      filter: blur(35px);
+      mix-blend-mode: screen;
       animation: mist-float-2 60s ease-in-out infinite;
     }
 
     .mist-3 {
-      bottom: -5%;
+      bottom: 0%;
       left: -10%;
-      width: 100%;
-      height: 40%;
-      background: radial-gradient(ellipse at 50% 50%, rgba(195,215,210,0.12) 0%, transparent 60%);
-      filter: url(#fog-3);
-      animation: mist-float-3 45s ease-in-out infinite;
+      width: 110%;
+      height: 35%;
+      background:
+        radial-gradient(ellipse 50% 50% at 60% 80%, rgba(200,218,212,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(190,212,205,0.18) 0%, transparent 55%);
+      filter: blur(40px);
+      mix-blend-mode: screen;
+      animation: mist-float-3 50s ease-in-out infinite;
     }
 
     @keyframes mist-float-1 {
       0%   { transform: translate(0, 0); }
-      25%  { transform: translate(40px, -10px); }
-      50%  { transform: translate(-20px, 5px); }
-      75%  { transform: translate(25px, -8px); }
+      25%  { transform: translate(50px, -15px); }
+      50%  { transform: translate(-30px, 8px); }
+      75%  { transform: translate(35px, -10px); }
       100% { transform: translate(0, 0); }
     }
 
     @keyframes mist-float-2 {
       0%   { transform: translate(0, 0); }
-      33%  { transform: translate(-35px, 8px); }
-      66%  { transform: translate(30px, -5px); }
+      33%  { transform: translate(-45px, 12px); }
+      66%  { transform: translate(40px, -8px); }
       100% { transform: translate(0, 0); }
     }
 
     @keyframes mist-float-3 {
       0%   { transform: translate(0, 0); }
-      30%  { transform: translate(20px, 10px); }
-      60%  { transform: translate(-30px, -5px); }
+      30%  { transform: translate(30px, 15px); }
+      60%  { transform: translate(-40px, -8px); }
       100% { transform: translate(0, 0); }
     }
 
