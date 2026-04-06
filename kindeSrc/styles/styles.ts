@@ -89,34 +89,35 @@ export function getStyles(): string {
       filter: brightness(0) invert(1) !important;
     }
 
-    /* Text inputs */
+    /* Text inputs - matches mobile app InputDecorationTheme */
     [data-kinde-control-select-text] {
-      background-color: #161717 !important;
-      border: 1px solid #2A2B2B !important;
+      background-color: #1E1F1F !important;
+      border: 1px solid #323333 !important;
       color: #E8E6E3 !important;
-      min-height: 2.75rem !important;
-      padding: 0.625rem 0.875rem !important;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.3) !important;
-      transition: border-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
-                  box-shadow 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      min-height: 3rem !important;
+      padding: 0.875rem 1.25rem !important;
+      border-radius: 12px !important;
+      box-shadow: none !important;
+      transition: border-color 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     [data-kinde-control-select-text]:focus {
-      border-color: rgba(92, 138, 115, 0.5) !important;
+      border-color: #5C8A73 !important;
+      border-width: 2px !important;
       outline: none !important;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.3), 0 0 0 2px rgba(92, 138, 115, 0.4) !important;
+      box-shadow: none !important;
     }
 
     [data-kinde-control-select-text]::placeholder {
-      color: rgba(171, 171, 171, 0.6) !important;
+      color: #7A7A7A !important;
     }
 
     /* Labels */
     [data-kinde-control-label] {
-      color: #ABABAB !important;
+      color: #E8E6E3 !important;
       font-weight: 500;
-      font-size: 0.8125rem;
-      margin-bottom: 0.375rem !important;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem !important;
     }
 
     /* Links */
@@ -162,10 +163,18 @@ export function getStyles(): string {
       margin-bottom: 0.25rem !important;
     }
 
-    /* Footer links */
+    /* Footer links - No account? Create one */
     [data-kinde-layout-footer] {
-      margin-top: 1.75rem !important;
+      margin-top: 2rem !important;
       font-size: 0.8125rem !important;
+      color: #7A7A7A !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+
+    [data-kinde-layout-footer] [data-kinde-text-link] {
+      color: #5C8A73 !important;
+      font-weight: 500 !important;
     }
 
     /* Powered by Kinde - monochrome footnote */
