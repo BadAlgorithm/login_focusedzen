@@ -16,75 +16,14 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
         overflow: "hidden",
       }}
     >
-      {/* Left side: login form - overlaps image */}
-      <div
-        data-fz-panel="left"
-        style={{
-          flex: "0 0 640px",
-          maxWidth: "640px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          padding: "3rem 3rem",
-          position: "relative",
-          zIndex: 2,
-          background: "#161717",
-          borderRadius: "0 24px 24px 0",
-          boxShadow: "12px 0 48px -4px rgba(0, 0, 0, 0.6), 4px 0 16px -2px rgba(0, 0, 0, 0.4), 24px 0 80px 0 rgba(22, 23, 23, 0.5)",
-        }}
-      >
-        {/* Logo: enso circle + font-based FocusedZen */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.625rem",
-            marginBottom: "2.5rem",
-          }}
-        >
-          <img
-            src="https://cdn.focusedzen.com/login/enso-logo.png"
-            alt=""
-            style={{
-              width: "52px",
-              height: "52px",
-            }}
-          />
-          <span style={{ display: "flex", alignItems: "baseline" }}>
-            <span
-              style={{
-                fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "2rem",
-                fontWeight: 500,
-                color: "#5C8A73",
-              }}
-            >
-              Focused
-            </span>
-            <span
-              style={{
-                fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "2rem",
-                fontWeight: 700,
-                color: "#C45A7D",
-              }}
-            >
-              Zen
-            </span>
-          </span>
-        </div>
-        {children}
-      </div>
-
-      {/* Right side: garden image - tucked under left panel */}
+      {/* Left side: garden image - tucked under form panel */}
       <div
         data-fz-panel="right"
         style={{
           flex: 1,
           position: "relative",
           overflow: "hidden",
-          marginLeft: "-32px",
+          marginRight: "-32px",
           zIndex: 1,
           background: "#1a2e23",
         }}
@@ -134,21 +73,82 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           <div className="firefly firefly-12" />
         </div>
 
-        {/* Cinematic vignette overlay */}
+        {/* Cinematic vignette overlay - flipped: right edge fades into form panel */}
         <div
           style={{
             position: "absolute",
             inset: "0",
             zIndex: 5,
             background: [
-              "radial-gradient(ellipse 80% 70% at 55% 45%, transparent 0%, transparent 40%, rgba(22,23,23,0.15) 60%, rgba(22,23,23,0.4) 80%, rgba(22,23,23,0.6) 100%)",
-              "linear-gradient(to right, rgba(22, 23, 23, 0.9) 0%, rgba(22, 23, 23, 0.5) 8%, rgba(22, 23, 23, 0.15) 18%, transparent 35%)",
+              "radial-gradient(ellipse 80% 70% at 45% 45%, transparent 0%, transparent 40%, rgba(22,23,23,0.15) 60%, rgba(22,23,23,0.4) 80%, rgba(22,23,23,0.6) 100%)",
+              "linear-gradient(to left, rgba(22, 23, 23, 0.9) 0%, rgba(22, 23, 23, 0.5) 8%, rgba(22, 23, 23, 0.15) 18%, transparent 35%)",
               "linear-gradient(to top, rgba(22, 23, 23, 0.5) 0%, rgba(22, 23, 23, 0.15) 15%, transparent 35%)",
               "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
             ].join(", "),
             pointerEvents: "none",
           }}
         />
+      </div>
+
+      {/* Right side: login form - overlaps image */}
+      <div
+        data-fz-panel="left"
+        style={{
+          flex: "0 0 640px",
+          maxWidth: "640px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          padding: "3rem 3rem",
+          position: "relative",
+          zIndex: 2,
+          background: "#161717",
+          borderRadius: "24px 0 0 24px",
+          boxShadow: "-12px 0 48px -4px rgba(0, 0, 0, 0.6), -4px 0 16px -2px rgba(0, 0, 0, 0.4), -24px 0 80px 0 rgba(22, 23, 23, 0.5)",
+        }}
+      >
+        {/* Logo: enso circle + font-based FocusedZen */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.625rem",
+            marginBottom: "2.5rem",
+          }}
+        >
+          <img
+            src="https://cdn.focusedzen.com/login/enso-logo.png"
+            alt=""
+            style={{
+              width: "52px",
+              height: "52px",
+            }}
+          />
+          <span style={{ display: "flex", alignItems: "baseline" }}>
+            <span
+              style={{
+                fontFamily: "'Manrope', system-ui, sans-serif",
+                fontSize: "2rem",
+                fontWeight: 500,
+                color: "#5C8A73",
+              }}
+            >
+              Focused
+            </span>
+            <span
+              style={{
+                fontFamily: "'Manrope', system-ui, sans-serif",
+                fontSize: "2rem",
+                fontWeight: 700,
+                color: "#C45A7D",
+              }}
+            >
+              Zen
+            </span>
+          </span>
+        </div>
+        {children}
       </div>
     </div>
   );
