@@ -114,7 +114,8 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.625rem",
+            justifyContent: "center",
+            gap: "0.75rem",
             marginBottom: "2.5rem",
           }}
         >
@@ -122,15 +123,15 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             src="https://cdn.focusedzen.com/login/enso-logo.png"
             alt=""
             style={{
-              width: "52px",
-              height: "52px",
+              width: "60px",
+              height: "60px",
             }}
           />
           <span style={{ display: "flex", alignItems: "baseline" }}>
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "2rem",
+                fontSize: "2.5rem",
                 fontWeight: 500,
                 color: "#5C8A73",
               }}
@@ -140,7 +141,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "2rem",
+                fontSize: "2.5rem",
                 fontWeight: 700,
                 color: "#C45A7D",
               }}

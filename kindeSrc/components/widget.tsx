@@ -22,7 +22,7 @@ export const Widget: React.FC<WidgetProps> = ({ heading, description }) => {
           fontSize: "1.125rem",
           fontWeight: 500,
           color: "#E8E6E3",
-          marginBottom: "0.375rem",
+          marginBottom: "1.5rem",
           letterSpacing: "-0.025em",
         }}
       >

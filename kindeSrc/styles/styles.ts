@@ -137,10 +137,10 @@ export function getStyles(): string {
     .kinde-choice-separator {
       color: #ABABAB !important;
       text-transform: lowercase;
-      font-size: 0.75rem;
+      font-size: 0.9375rem;
       font-weight: 400;
       letter-spacing: 0.05em;
-      margin: 1.5rem 0 !important;
+      margin: 0.875rem 0 !important;
     }
 
     [data-kinde-choice-separator]::before,
@@ -189,8 +189,8 @@ export function getStyles(): string {
     /* Powered by Kinde - monochrome footnote */
     [data-kinde-layout-widget-branding],
     .kinde-layout-widget-branding {
-      opacity: 0.2 !important;
-      font-size: 0.625rem !important;
+      opacity: 0.55 !important;
+      font-size: 0.6875rem !important;
       margin-top: 1.5rem !important;
       filter: grayscale(1) !important;
       transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -198,16 +198,16 @@ export function getStyles(): string {
 
     [data-kinde-layout-widget-branding]:hover,
     .kinde-layout-widget-branding:hover {
-      opacity: 0.35 !important;
+      opacity: 0.8 !important;
     }
 
     [data-kinde-layout-widget-branding] *,
     .kinde-layout-widget-branding *,
     .kinde-branding,
     .kinde-branding * {
-      filter: grayscale(1) brightness(0.7) !important;
-      color: #7A7A7A !important;
-      font-size: 0.625rem !important;
+      filter: grayscale(1) brightness(1) !important;
+      color: #9A9A9A !important;
+      font-size: 0.6875rem !important;
       font-weight: 400 !important;
     }
 
@@ -215,8 +215,8 @@ export function getStyles(): string {
     .kinde-branding svg,
     [data-kinde-layout-widget-branding] img,
     [data-kinde-layout-widget-branding] svg {
-      max-height: 11px !important;
-      filter: grayscale(1) brightness(0.5) !important;
+      max-height: 12px !important;
+      filter: grayscale(1) brightness(0.9) !important;
     }
 
     /* Animations */
