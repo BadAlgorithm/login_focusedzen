@@ -49,6 +49,7 @@ export function getStyles(): string {
       font-weight: 600;
       letter-spacing: 0.02em;
       min-height: 2.75rem !important;
+      margin-top: 0.75rem !important;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.3) !important;
       transition: filter 300ms cubic-bezier(0.25, 0.1, 0.25, 1),
                   transform 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -163,7 +164,7 @@ export function getStyles(): string {
 
     /* Footer links */
     [data-kinde-layout-footer] {
-      margin-top: 1.5rem !important;
+      margin-top: 1.75rem !important;
       font-size: 0.8125rem !important;
     }
 
