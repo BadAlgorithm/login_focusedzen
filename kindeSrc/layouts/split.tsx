@@ -141,10 +141,10 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             inset: "0",
             zIndex: 5,
             background: [
-              "radial-gradient(ellipse 70% 60% at 55% 45%, transparent 0%, transparent 35%, rgba(22,23,23,0.3) 55%, rgba(22,23,23,0.65) 75%, rgba(22,23,23,0.85) 100%)",
-              "linear-gradient(to right, rgba(22, 23, 23, 0.95) 0%, rgba(22, 23, 23, 0.6) 8%, rgba(22, 23, 23, 0.2) 20%, transparent 40%)",
-              "linear-gradient(to top, rgba(22, 23, 23, 0.7) 0%, rgba(22, 23, 23, 0.3) 18%, transparent 40%)",
-              "linear-gradient(to bottom, rgba(22, 23, 23, 0.35) 0%, transparent 20%)",
+              "radial-gradient(ellipse 80% 70% at 55% 45%, transparent 0%, transparent 40%, rgba(22,23,23,0.15) 60%, rgba(22,23,23,0.4) 80%, rgba(22,23,23,0.6) 100%)",
+              "linear-gradient(to right, rgba(22, 23, 23, 0.9) 0%, rgba(22, 23, 23, 0.5) 8%, rgba(22, 23, 23, 0.15) 18%, transparent 35%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.5) 0%, rgba(22, 23, 23, 0.15) 15%, transparent 35%)",
+              "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
             ].join(", "),
             pointerEvents: "none",
           }}
