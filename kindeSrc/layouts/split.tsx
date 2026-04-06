@@ -105,6 +105,11 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           }}
         />
 
+        {/* Mist layers */}
+        <div className="mist mist-1" />
+        <div className="mist mist-2" />
+        <div className="mist mist-3" />
+
         {/* Fireflies */}
         <div
           style={{
@@ -112,7 +117,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             inset: "0",
             overflow: "hidden",
             pointerEvents: "none",
-            zIndex: 2,
+            zIndex: 4,
           }}
         >
           <div className="firefly firefly-1" />
@@ -123,6 +128,10 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           <div className="firefly firefly-6" />
           <div className="firefly firefly-7" />
           <div className="firefly firefly-8" />
+          <div className="firefly firefly-9" />
+          <div className="firefly firefly-10" />
+          <div className="firefly firefly-11" />
+          <div className="firefly firefly-12" />
         </div>
 
         {/* Vignette overlay */}
@@ -130,10 +139,10 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           style={{
             position: "absolute",
             inset: "0",
-            zIndex: 3,
+            zIndex: 5,
             background: [
               "linear-gradient(to right, rgba(22, 23, 23, 0.85) 0%, rgba(22, 23, 23, 0.4) 12%, transparent 35%)",
-              "linear-gradient(to top, rgba(22, 23, 23, 0.65) 0%, rgba(22, 23, 23, 0.2) 25%, transparent 50%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.55) 0%, rgba(22, 23, 23, 0.15) 20%, transparent 45%)",
               "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
             ].join(", "),
             pointerEvents: "none",

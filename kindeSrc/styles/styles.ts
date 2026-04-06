@@ -209,6 +209,47 @@ export function getStyles(): string {
       animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
+    /* ---- Mist / fog layers ---- */
+
+    .mist {
+      position: absolute;
+      left: 0;
+      width: 200%;
+      pointer-events: none;
+      z-index: 2;
+      background-repeat: repeat-x;
+      mix-blend-mode: screen;
+    }
+
+    .mist-1 {
+      bottom: 0;
+      height: 35%;
+      background: linear-gradient(to right, transparent 0%, rgba(220,230,225,0.2) 25%, rgba(215,228,222,0.3) 50%, rgba(220,230,225,0.2) 75%, transparent 100%);
+      filter: blur(14px);
+      animation: mist-drift-slow 90s linear infinite;
+    }
+
+    .mist-2 {
+      bottom: 5%;
+      height: 30%;
+      background: linear-gradient(to right, transparent 0%, rgba(225,235,230,0.15) 30%, rgba(220,232,226,0.25) 50%, rgba(225,235,230,0.15) 70%, transparent 100%);
+      filter: blur(18px);
+      animation: mist-drift-slow 65s linear infinite reverse;
+    }
+
+    .mist-3 {
+      bottom: 12%;
+      height: 22%;
+      background: linear-gradient(to right, transparent 0%, rgba(230,238,234,0.1) 35%, rgba(225,235,230,0.18) 50%, rgba(230,238,234,0.1) 65%, transparent 100%);
+      filter: blur(22px);
+      animation: mist-drift-slow 45s linear infinite;
+    }
+
+    @keyframes mist-drift-slow {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     /* ---- Firefly ambient animation ---- */
 
     .firefly {
@@ -219,75 +260,111 @@ export function getStyles(): string {
     }
 
     .firefly-1 {
-      width: 5px; height: 5px;
+      width: 7px; height: 7px;
       background: #f5d47a;
-      box-shadow: 0 0 4px 2px rgba(245,212,122,0.8), 0 0 14px 7px rgba(245,212,122,0.35), 0 0 30px 15px rgba(245,212,122,0.1);
+      box-shadow: 0 0 6px 3px rgba(245,212,122,0.9), 0 0 18px 9px rgba(245,212,122,0.45), 0 0 40px 20px rgba(245,212,122,0.15);
       top: 18%; left: 22%;
       animation: drift-1 27s ease-in-out infinite, glow-1 8s ease-in-out infinite;
       animation-delay: -12s, -4s;
     }
 
     .firefly-2 {
-      width: 4px; height: 4px;
+      width: 6px; height: 6px;
       background: #f0cc5e;
-      box-shadow: 0 0 3px 2px rgba(240,204,94,0.7), 0 0 12px 6px rgba(240,204,94,0.3), 0 0 24px 12px rgba(240,204,94,0.08);
+      box-shadow: 0 0 5px 3px rgba(240,204,94,0.85), 0 0 16px 8px rgba(240,204,94,0.4), 0 0 34px 17px rgba(240,204,94,0.12);
       top: 42%; left: 65%;
       animation: drift-2 23s ease-in-out infinite, glow-2 10s ease-in-out infinite;
       animation-delay: -8s, -6s;
     }
 
     .firefly-3 {
-      width: 3px; height: 3px;
+      width: 5px; height: 5px;
       background: #e8c547;
-      box-shadow: 0 0 3px 1px rgba(232,197,71,0.7), 0 0 10px 5px rgba(232,197,71,0.25), 0 0 20px 10px rgba(232,197,71,0.08);
+      box-shadow: 0 0 4px 2px rgba(232,197,71,0.85), 0 0 14px 7px rgba(232,197,71,0.35), 0 0 28px 14px rgba(232,197,71,0.1);
       top: 12%; left: 75%;
       animation: drift-3 31s ease-in-out infinite, glow-1 7s ease-in-out infinite;
       animation-delay: -20s, -2s;
     }
 
     .firefly-4 {
-      width: 2px; height: 2px;
+      width: 4px; height: 4px;
       background: #d4c455;
-      box-shadow: 0 0 2px 1px rgba(212,196,85,0.5), 0 0 8px 4px rgba(212,196,85,0.15);
+      box-shadow: 0 0 3px 2px rgba(212,196,85,0.7), 0 0 10px 5px rgba(212,196,85,0.25);
       top: 55%; left: 35%;
       animation: drift-4 29s ease-in-out infinite, glow-3 12s ease-in-out infinite;
       animation-delay: -15s, -9s;
     }
 
     .firefly-5 {
-      width: 4px; height: 4px;
+      width: 6px; height: 6px;
       background: #f5d47a;
-      box-shadow: 0 0 4px 2px rgba(245,212,122,0.75), 0 0 12px 6px rgba(245,212,122,0.3), 0 0 26px 13px rgba(245,212,122,0.1);
+      box-shadow: 0 0 5px 3px rgba(245,212,122,0.85), 0 0 16px 8px rgba(245,212,122,0.4), 0 0 36px 18px rgba(245,212,122,0.12);
       top: 68%; left: 15%;
       animation: drift-5 25s ease-in-out infinite, glow-2 9s ease-in-out infinite;
       animation-delay: -5s, -7s;
     }
 
     .firefly-6 {
-      width: 3px; height: 3px;
+      width: 5px; height: 5px;
       background: #e8c547;
-      box-shadow: 0 0 3px 1px rgba(232,197,71,0.65), 0 0 10px 5px rgba(232,197,71,0.2), 0 0 18px 9px rgba(232,197,71,0.07);
+      box-shadow: 0 0 4px 2px rgba(232,197,71,0.8), 0 0 14px 7px rgba(232,197,71,0.3), 0 0 28px 14px rgba(232,197,71,0.1);
       top: 35%; left: 82%;
       animation: drift-6 33s ease-in-out infinite, glow-1 11s ease-in-out infinite;
       animation-delay: -18s, -5s;
     }
 
     .firefly-7 {
-      width: 2px; height: 2px;
+      width: 4px; height: 4px;
       background: #d4c455;
-      box-shadow: 0 0 2px 1px rgba(212,196,85,0.4), 0 0 6px 3px rgba(212,196,85,0.12);
+      box-shadow: 0 0 3px 2px rgba(212,196,85,0.6), 0 0 10px 5px rgba(212,196,85,0.2);
       top: 78%; left: 55%;
       animation: drift-3 37s ease-in-out infinite, glow-3 13s ease-in-out infinite;
       animation-delay: -25s, -8s;
     }
 
     .firefly-8 {
-      width: 3px; height: 3px;
+      width: 5px; height: 5px;
       background: #f0cc5e;
-      box-shadow: 0 0 3px 2px rgba(240,204,94,0.7), 0 0 10px 5px rgba(240,204,94,0.25), 0 0 20px 10px rgba(240,204,94,0.08);
+      box-shadow: 0 0 4px 2px rgba(240,204,94,0.85), 0 0 14px 7px rgba(240,204,94,0.35), 0 0 28px 14px rgba(240,204,94,0.1);
       top: 25%; left: 45%;
       animation: drift-2 21s ease-in-out infinite, glow-2 7.5s ease-in-out infinite;
       animation-delay: -10s, -3s;
+    }
+
+    .firefly-9 {
+      width: 7px; height: 7px;
+      background: #f5d47a;
+      box-shadow: 0 0 6px 3px rgba(245,212,122,0.9), 0 0 18px 9px rgba(245,212,122,0.4), 0 0 38px 19px rgba(245,212,122,0.12);
+      top: 30%; left: 50%;
+      animation: drift-1 19s ease-in-out infinite, glow-1 6.5s ease-in-out infinite;
+      animation-delay: -7s, -2s;
+    }
+
+    .firefly-10 {
+      width: 4px; height: 4px;
+      background: #e8c547;
+      box-shadow: 0 0 3px 2px rgba(232,197,71,0.75), 0 0 12px 6px rgba(232,197,71,0.3);
+      top: 48%; left: 20%;
+      animation: drift-5 35s ease-in-out infinite, glow-3 9.5s ease-in-out infinite;
+      animation-delay: -22s, -4s;
+    }
+
+    .firefly-11 {
+      width: 6px; height: 6px;
+      background: #f0cc5e;
+      box-shadow: 0 0 5px 3px rgba(240,204,94,0.8), 0 0 16px 8px rgba(240,204,94,0.35), 0 0 32px 16px rgba(240,204,94,0.1);
+      top: 60%; left: 70%;
+      animation: drift-4 26s ease-in-out infinite, glow-2 8.5s ease-in-out infinite;
+      animation-delay: -14s, -6s;
+    }
+
+    .firefly-12 {
+      width: 3px; height: 3px;
+      background: #d4c455;
+      box-shadow: 0 0 3px 1px rgba(212,196,85,0.65), 0 0 8px 4px rgba(212,196,85,0.2);
+      top: 85%; left: 40%;
+      animation: drift-6 31s ease-in-out infinite, glow-1 10.5s ease-in-out infinite;
+      animation-delay: -28s, -7s;
     }
 
     /* Drift keyframes - organic float paths */
@@ -344,29 +421,29 @@ export function getStyles(): string {
       100% { transform: translate(0, 0); }
     }
 
-    /* Glow keyframes - firefly bioluminescence breathing */
+    /* Glow keyframes - firefly bioluminescence */
     @keyframes glow-1 {
       0%   { opacity: 0; }
-      15%  { opacity: 0.1; }
-      40%  { opacity: 0.8; }
-      60%  { opacity: 0.6; }
-      80%  { opacity: 0.15; }
+      15%  { opacity: 0.15; }
+      40%  { opacity: 0.9; }
+      60%  { opacity: 0.7; }
+      80%  { opacity: 0.2; }
       100% { opacity: 0; }
     }
 
     @keyframes glow-2 {
       0%   { opacity: 0; }
-      20%  { opacity: 0.05; }
-      45%  { opacity: 0.7; }
-      70%  { opacity: 0.4; }
+      20%  { opacity: 0.1; }
+      45%  { opacity: 0.85; }
+      70%  { opacity: 0.5; }
       100% { opacity: 0; }
     }
 
     @keyframes glow-3 {
       0%   { opacity: 0; }
-      30%  { opacity: 0.5; }
-      50%  { opacity: 0.3; }
-      75%  { opacity: 0.6; }
+      30%  { opacity: 0.6; }
+      50%  { opacity: 0.35; }
+      75%  { opacity: 0.7; }
       100% { opacity: 0; }
     }
 
@@ -379,10 +456,13 @@ export function getStyles(): string {
       }
       .firefly {
         animation: none !important;
-        opacity: 0.4;
+        opacity: 0.5;
       }
-      .firefly-4, .firefly-7 {
+      .firefly-4, .firefly-7, .firefly-12 {
         opacity: 0;
+      }
+      .mist {
+        animation: none !important;
       }
     }
 
