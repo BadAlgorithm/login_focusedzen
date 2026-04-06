@@ -40,11 +40,9 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
           }
           ${getStyles()}
         ` }} />
-        {getKindeCSRF()}
       </head>
       <body>
         <div data-kinde-root="true">{children}</div>
-        {getKindeRequiredJS()}
       </body>
     </html>
   );
