@@ -28,6 +28,14 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
         <meta name="robots" content="noindex, nofollow" />
         <meta content={getKindeCSRF()} name="csrf-token" />
         <title>{context.widget.content.pageTitle || "FocusedZen"}</title>
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.focusedzen.com/login/garden-entrance-2x.webp"
+          type="image/webp"
+          fetchPriority="high"
+          media="(min-width: 769px)"
+        />
         {getKindeRequiredCSS()}
         {getKindeRequiredJS()}
         <style nonce={getKindeNonce()} dangerouslySetInnerHTML={{ __html: `
@@ -43,6 +51,32 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
       </head>
       <body>
         <div data-kinde-root="true">{children}</div>
+        <script nonce={getKindeNonce()} dangerouslySetInnerHTML={{ __html: `
+          (function () {
+            function ready(img) {
+              img.classList.add('loaded');
+              var panel = img.closest('[data-fz-panel="right"]');
+              if (panel) panel.classList.add('scene-ready');
+            }
+            function init() {
+              var imgs = document.querySelectorAll('img.panel-image');
+              for (var i = 0; i < imgs.length; i++) {
+                var img = imgs[i];
+                if (img.complete && img.naturalWidth > 0) {
+                  ready(img);
+                } else {
+                  img.addEventListener('load', (function (el) { return function () { ready(el); }; })(img));
+                  img.addEventListener('error', (function (el) { return function () { ready(el); }; })(img));
+                }
+              }
+            }
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', init);
+            } else {
+              init();
+            }
+          })();
+        ` }} />
       </body>
     </html>
   );

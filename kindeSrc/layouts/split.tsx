@@ -29,11 +29,31 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           background: "#1a2e23",
         }}
       >
+        {/* LQIP placeholder - blurred 24px base64, paints instantly */}
+        <div
+          className="panel-lqip"
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "url('data:image/webp;base64,UklGRmoBAABXRUJQVlA4IF4BAADQBwCdASoYACQAPtFaoU0oJSMiKqwBABoJQBbfax642MLpAhv/immYQ6tA9RRyb+f63M45KQNQHSJqrY4reVvw8dV1XZEIgAD9qda9GmFT2Fga0kp0m+GYuIrzzEfzf9bfgEtB+//JlEIOrniY4gPZ7yIyo+2inTx0H2uOnyuFcqJhNdUBt7vzlb1M1XVl/07qR+bM0acxs5onMLqe0V/QXE173VG6EN5SsuoWC1beQmQmB1Y15DFe3LnDzuKCVrrabF95b9TYvvIl1C+BzfvoY9RdAMwzy7iI2T7pBsmnKBSdPNVgxThukFBLle+EOiHbIqyZRCyImpUrwF5Kbr47GA7l4MopzyTaC9bfruSJfOfebaq7wpQROUBABdiJ/ibg1b3mpyGBUYDZT4e8kenzaKgF5DYa2NBxXPcSYiMyKo4kRi/BkWIxe1c0ZPNqfhpnmh0sEAi5BnPlwjroAA==')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
+            filter: "blur(24px)",
+            transform: "scale(1.08)",
+            zIndex: 0,
+          }}
+        />
+
         {/* Background image */}
         <img
           className="panel-image"
           src="https://cdn.focusedzen.com/login/garden-entrance-2x.webp"
           alt=""
+          decoding="async"
+          // @ts-ignore - fetchPriority is valid HTML, types may lag
+          fetchPriority="high"
           style={{
             position: "absolute",
             inset: "0",
@@ -41,7 +61,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             height: "100%",
             objectFit: "cover",
             objectPosition: "center 30%",
-            zIndex: 0,
+            zIndex: 1,
           }}
         />
 

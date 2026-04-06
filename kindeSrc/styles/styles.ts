@@ -230,19 +230,26 @@ export function getStyles(): string {
     }
 
     /* Animations */
-    @keyframes imageReveal {
-      from {
-        transform: scale(1.02);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1.0);
-        opacity: 1;
-      }
+    .panel-image {
+      opacity: 0;
+      transform: scale(1.02);
+      transition: opacity 900ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 1400ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
-    .panel-image {
-      animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    .panel-image.loaded {
+      opacity: 1;
+      transform: scale(1.0);
+    }
+
+    /* LQIP fades out once the real image has settled in */
+    .panel-lqip {
+      opacity: 1;
+      transition: opacity 900ms ease-out 200ms;
+    }
+
+    .scene-ready .panel-lqip {
+      opacity: 0;
     }
 
     /* ---- Mist / fog layers (CSS blur + radial blobs) ---- */
@@ -251,7 +258,13 @@ export function getStyles(): string {
       position: absolute;
       pointer-events: none;
       z-index: 2;
-      will-change: transform;
+      will-change: transform, opacity;
+      opacity: 0;
+      transition: opacity 1200ms ease-out 500ms;
+    }
+
+    .scene-ready .mist {
+      opacity: 1;
     }
 
     .mist-1 {
@@ -323,6 +336,13 @@ export function getStyles(): string {
       border-radius: 50%;
       will-change: transform, opacity;
       pointer-events: none;
+      visibility: hidden;
+      animation-play-state: paused !important;
+    }
+
+    .scene-ready .firefly {
+      visibility: visible;
+      animation-play-state: running !important;
     }
 
     .firefly-1 {
@@ -516,12 +536,18 @@ export function getStyles(): string {
     /* Accessibility: reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .panel-image {
-        animation: none !important;
-        opacity: 1 !important;
+        transition: opacity 200ms linear !important;
         transform: none !important;
+      }
+      .panel-image.loaded {
+        transform: none !important;
+      }
+      .panel-lqip {
+        transition: opacity 200ms linear !important;
       }
       .firefly {
         animation: none !important;
+        visibility: visible;
         opacity: 0.5;
       }
       .firefly-4, .firefly-7, .firefly-12 {
@@ -529,6 +555,8 @@ export function getStyles(): string {
       }
       .mist {
         animation: none !important;
+        opacity: 1;
+        transition: none !important;
       }
     }
 
