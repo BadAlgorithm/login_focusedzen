@@ -20,8 +20,8 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
       <div
         data-fz-panel="left"
         style={{
-          flex: "0 0 560px",
-          maxWidth: "560px",
+          flex: "0 0 640px",
+          maxWidth: "640px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
