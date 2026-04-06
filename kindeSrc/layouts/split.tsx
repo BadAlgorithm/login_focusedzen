@@ -20,7 +20,8 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
       <div
         data-fz-panel="right"
         style={{
-          flex: 1,
+          flex: "0 0 420px",
+          maxWidth: "420px",
           position: "relative",
           overflow: "hidden",
           marginRight: "-32px",
@@ -94,13 +95,12 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
       <div
         data-fz-panel="left"
         style={{
-          flex: "0 0 640px",
-          maxWidth: "640px",
+          flex: 1,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "flex-start",
-          padding: "3rem 3rem",
+          alignItems: "center",
+          padding: "3rem 4rem",
           position: "relative",
           zIndex: 2,
           background: "#161717",
@@ -108,6 +108,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           boxShadow: "-12px 0 48px -4px rgba(0, 0, 0, 0.6), -4px 0 16px -2px rgba(0, 0, 0, 0.4), -24px 0 80px 0 rgba(22, 23, 23, 0.5)",
         }}
       >
+        <div style={{ width: "100%", maxWidth: "440px" }}>
         {/* Logo: enso circle + font-based FocusedZen */}
         <div
           style={{
@@ -149,6 +150,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           </span>
         </div>
         {children}
+        </div>
       </div>
     </div>
   );
