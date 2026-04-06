@@ -235,45 +235,66 @@ export function getStyles(): string {
       animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
-    /* ---- Mist / fog layers ---- */
+    /* ---- Mist / fog layers (SVG turbulence for organic shapes) ---- */
 
     .mist {
       position: absolute;
-      left: 0;
-      width: 200%;
       pointer-events: none;
       z-index: 2;
-      background-repeat: repeat-x;
+      border-radius: 50%;
       mix-blend-mode: screen;
     }
 
     .mist-1 {
-      bottom: 0;
-      height: 40%;
-      background: linear-gradient(to right, transparent 0%, rgba(190,210,205,0.15) 25%, rgba(185,208,200,0.22) 50%, rgba(190,210,205,0.15) 75%, transparent 100%);
-      filter: blur(18px);
-      animation: mist-drift-slow 90s linear infinite;
+      bottom: -15%;
+      left: -20%;
+      width: 140%;
+      height: 55%;
+      background: radial-gradient(ellipse at 50% 50%, rgba(190,210,205,0.2) 0%, transparent 70%);
+      filter: url(#fog-1);
+      animation: mist-float-1 80s ease-in-out infinite;
     }
 
     .mist-2 {
-      bottom: 5%;
-      height: 35%;
-      background: linear-gradient(to right, transparent 0%, rgba(195,215,210,0.1) 30%, rgba(190,212,206,0.18) 50%, rgba(195,215,210,0.1) 70%, transparent 100%);
-      filter: blur(24px);
-      animation: mist-drift-slow 65s linear infinite reverse;
+      bottom: -10%;
+      left: 10%;
+      width: 120%;
+      height: 45%;
+      background: radial-gradient(ellipse at 50% 50%, rgba(185,208,200,0.15) 0%, transparent 65%);
+      filter: url(#fog-2);
+      animation: mist-float-2 60s ease-in-out infinite;
     }
 
     .mist-3 {
-      bottom: 15%;
-      height: 28%;
-      background: linear-gradient(to right, transparent 0%, rgba(200,220,215,0.07) 35%, rgba(195,215,210,0.12) 50%, rgba(200,220,215,0.07) 65%, transparent 100%);
-      filter: blur(30px);
-      animation: mist-drift-slow 45s linear infinite;
+      bottom: -5%;
+      left: -10%;
+      width: 100%;
+      height: 40%;
+      background: radial-gradient(ellipse at 50% 50%, rgba(195,215,210,0.12) 0%, transparent 60%);
+      filter: url(#fog-3);
+      animation: mist-float-3 45s ease-in-out infinite;
     }
 
-    @keyframes mist-drift-slow {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes mist-float-1 {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(40px, -10px); }
+      50%  { transform: translate(-20px, 5px); }
+      75%  { transform: translate(25px, -8px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes mist-float-2 {
+      0%   { transform: translate(0, 0); }
+      33%  { transform: translate(-35px, 8px); }
+      66%  { transform: translate(30px, -5px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes mist-float-3 {
+      0%   { transform: translate(0, 0); }
+      30%  { transform: translate(20px, 10px); }
+      60%  { transform: translate(-30px, -5px); }
+      100% { transform: translate(0, 0); }
     }
 
     /* ---- Firefly ambient animation ---- */

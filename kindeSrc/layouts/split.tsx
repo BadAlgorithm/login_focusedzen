@@ -105,7 +105,25 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           }}
         />
 
-        {/* Mist layers */}
+        {/* SVG filters for organic fog shapes */}
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <defs>
+            <filter id="fog-1" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="1" />
+              <feDisplacementMap in="SourceGraphic" scale="120" />
+            </filter>
+            <filter id="fog-2" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="7" />
+              <feDisplacementMap in="SourceGraphic" scale="90" />
+            </filter>
+            <filter id="fog-3" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="4" seed="13" />
+              <feDisplacementMap in="SourceGraphic" scale="100" />
+            </filter>
+          </defs>
+        </svg>
+
+        {/* Mist layers - organic cloud shapes via SVG turbulence */}
         <div className="mist mist-1" />
         <div className="mist mist-2" />
         <div className="mist mist-3" />
