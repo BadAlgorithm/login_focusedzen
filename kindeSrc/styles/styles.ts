@@ -211,11 +211,21 @@ export function getStyles(): string {
       font-weight: 400 !important;
     }
 
+    .kinde-branding,
+    [data-kinde-layout-widget-branding] figure,
+    [data-kinde-layout-widget-branding] .kinde-branding {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.25rem !important;
+    }
+
     .kinde-branding img,
     .kinde-branding svg,
     [data-kinde-layout-widget-branding] img,
     [data-kinde-layout-widget-branding] svg {
-      max-height: 12px !important;
+      height: 11px !important;
+      max-height: 11px !important;
+      width: auto !important;
       filter: grayscale(1) brightness(0.9) !important;
     }
 
