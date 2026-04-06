@@ -31,7 +31,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           zIndex: 2,
           background: "#161717",
           borderRadius: "0 24px 24px 0",
-          boxShadow: "8px 0 32px -4px rgba(0, 0, 0, 0.5), 2px 0 8px -2px rgba(0, 0, 0, 0.3)",
+          boxShadow: "12px 0 48px -4px rgba(0, 0, 0, 0.6), 4px 0 16px -2px rgba(0, 0, 0, 0.4), 24px 0 80px 0 rgba(22, 23, 23, 0.5)",
         }}
       >
         {/* Logo: enso circle + font-based FocusedZen */}
@@ -89,16 +89,16 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           background: "#1a2e23",
         }}
       >
-        {/* Background image */}
+        {/* Background image - blurred/desaturated for "glimpse through fog" */}
         <img
           className="panel-image"
           src="https://cdn.focusedzen.com/login/garden-entrance-2x.webp"
           alt=""
           style={{
             position: "absolute",
-            inset: "0",
-            width: "100%",
-            height: "100%",
+            inset: "-8px",
+            width: "calc(100% + 16px)",
+            height: "calc(100% + 16px)",
             objectFit: "cover",
             objectPosition: "center 30%",
             zIndex: 0,
@@ -134,16 +134,17 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           <div className="firefly firefly-12" />
         </div>
 
-        {/* Vignette overlay */}
+        {/* Cinematic vignette overlay */}
         <div
           style={{
             position: "absolute",
             inset: "0",
             zIndex: 5,
             background: [
-              "linear-gradient(to right, rgba(22, 23, 23, 0.85) 0%, rgba(22, 23, 23, 0.4) 12%, transparent 35%)",
-              "linear-gradient(to top, rgba(22, 23, 23, 0.55) 0%, rgba(22, 23, 23, 0.15) 20%, transparent 45%)",
-              "linear-gradient(to bottom, rgba(22, 23, 23, 0.2) 0%, transparent 15%)",
+              "radial-gradient(ellipse 70% 60% at 55% 45%, transparent 0%, transparent 35%, rgba(22,23,23,0.3) 55%, rgba(22,23,23,0.65) 75%, rgba(22,23,23,0.85) 100%)",
+              "linear-gradient(to right, rgba(22, 23, 23, 0.95) 0%, rgba(22, 23, 23, 0.6) 8%, rgba(22, 23, 23, 0.2) 20%, transparent 40%)",
+              "linear-gradient(to top, rgba(22, 23, 23, 0.7) 0%, rgba(22, 23, 23, 0.3) 18%, transparent 40%)",
+              "linear-gradient(to bottom, rgba(22, 23, 23, 0.35) 0%, transparent 20%)",
             ].join(", "),
             pointerEvents: "none",
           }}

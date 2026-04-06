@@ -136,9 +136,10 @@ export function getStyles(): string {
     [data-kinde-choice-separator],
     .kinde-choice-separator {
       color: #ABABAB !important;
-      text-transform: uppercase;
-      font-size: 0.6875rem;
-      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       margin: 1.5rem 0 !important;
     }
 
@@ -146,8 +147,8 @@ export function getStyles(): string {
     [data-kinde-choice-separator]::after,
     .kinde-choice-separator::before,
     .kinde-choice-separator::after {
-      background-color: #323333 !important;
-      border-color: #323333 !important;
+      background-color: #3A3B3B !important;
+      border-color: #3A3B3B !important;
     }
 
     /* Form field spacing */
@@ -170,8 +171,8 @@ export function getStyles(): string {
     [data-kinde-layout-footer],
     .kinde-fallback-action {
       margin-top: 2.5rem !important;
-      font-size: 0.8125rem !important;
-      color: #7A7A7A !important;
+      font-size: 0.875rem !important;
+      color: #ABABAB !important;
       text-align: center !important;
       width: 100% !important;
     }
@@ -179,8 +180,10 @@ export function getStyles(): string {
     [data-kinde-layout-footer] [data-kinde-text-link],
     .kinde-fallback-action a,
     .kinde-fallback-action [data-kinde-text-link] {
-      color: #5C8A73 !important;
+      color: #7BA694 !important;
       font-weight: 500 !important;
+      text-decoration: underline !important;
+      text-underline-offset: 3px !important;
     }
 
     /* Powered by Kinde - monochrome footnote */
@@ -218,12 +221,21 @@ export function getStyles(): string {
 
     /* Animations */
     @keyframes imageReveal {
-      from { transform: scale(1.03); opacity: 0; }
-      to { transform: scale(1.0); opacity: 1; }
+      from {
+        transform: scale(1.04);
+        opacity: 0;
+        filter: blur(6px) saturate(0.1) brightness(0.2) contrast(1.1);
+      }
+      to {
+        transform: scale(1.0);
+        opacity: 1;
+        filter: blur(2px) saturate(0.4) brightness(0.55) contrast(1.1);
+      }
     }
 
     .panel-image {
-      animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+      animation: imageReveal 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+      filter: blur(2px) saturate(0.4) brightness(0.55) contrast(1.1);
     }
 
     /* ---- Mist / fog layers ---- */
@@ -240,25 +252,25 @@ export function getStyles(): string {
 
     .mist-1 {
       bottom: 0;
-      height: 35%;
-      background: linear-gradient(to right, transparent 0%, rgba(220,230,225,0.2) 25%, rgba(215,228,222,0.3) 50%, rgba(220,230,225,0.2) 75%, transparent 100%);
-      filter: blur(14px);
+      height: 40%;
+      background: linear-gradient(to right, transparent 0%, rgba(190,210,205,0.15) 25%, rgba(185,208,200,0.22) 50%, rgba(190,210,205,0.15) 75%, transparent 100%);
+      filter: blur(18px);
       animation: mist-drift-slow 90s linear infinite;
     }
 
     .mist-2 {
       bottom: 5%;
-      height: 30%;
-      background: linear-gradient(to right, transparent 0%, rgba(225,235,230,0.15) 30%, rgba(220,232,226,0.25) 50%, rgba(225,235,230,0.15) 70%, transparent 100%);
-      filter: blur(18px);
+      height: 35%;
+      background: linear-gradient(to right, transparent 0%, rgba(195,215,210,0.1) 30%, rgba(190,212,206,0.18) 50%, rgba(195,215,210,0.1) 70%, transparent 100%);
+      filter: blur(24px);
       animation: mist-drift-slow 65s linear infinite reverse;
     }
 
     .mist-3 {
-      bottom: 12%;
-      height: 22%;
-      background: linear-gradient(to right, transparent 0%, rgba(230,238,234,0.1) 35%, rgba(225,235,230,0.18) 50%, rgba(230,238,234,0.1) 65%, transparent 100%);
-      filter: blur(22px);
+      bottom: 15%;
+      height: 28%;
+      background: linear-gradient(to right, transparent 0%, rgba(200,220,215,0.07) 35%, rgba(195,215,210,0.12) 50%, rgba(200,220,215,0.07) 65%, transparent 100%);
+      filter: blur(30px);
       animation: mist-drift-slow 45s linear infinite;
     }
 
@@ -438,29 +450,29 @@ export function getStyles(): string {
       100% { transform: translate(0, 0); }
     }
 
-    /* Glow keyframes - firefly bioluminescence */
+    /* Glow keyframes - firefly bioluminescence (reduced for darker backdrop) */
     @keyframes glow-1 {
       0%   { opacity: 0; }
-      15%  { opacity: 0.15; }
-      40%  { opacity: 0.9; }
-      60%  { opacity: 0.7; }
-      80%  { opacity: 0.2; }
+      15%  { opacity: 0.1; }
+      40%  { opacity: 0.7; }
+      60%  { opacity: 0.5; }
+      80%  { opacity: 0.15; }
       100% { opacity: 0; }
     }
 
     @keyframes glow-2 {
       0%   { opacity: 0; }
-      20%  { opacity: 0.1; }
-      45%  { opacity: 0.85; }
-      70%  { opacity: 0.5; }
+      20%  { opacity: 0.08; }
+      45%  { opacity: 0.65; }
+      70%  { opacity: 0.35; }
       100% { opacity: 0; }
     }
 
     @keyframes glow-3 {
       0%   { opacity: 0; }
-      30%  { opacity: 0.6; }
-      50%  { opacity: 0.35; }
-      75%  { opacity: 0.7; }
+      30%  { opacity: 0.45; }
+      50%  { opacity: 0.25; }
+      75%  { opacity: 0.5; }
       100% { opacity: 0; }
     }
 
