@@ -537,13 +537,17 @@ export function getStyles(): string {
       }
     }
 
-    /* Smaller desktop */
+    /* Smaller desktop / tablet - flush edges, no floating card */
     @media (min-width: 769px) and (max-width: 1024px) {
       [data-fz-panel="left"] {
         flex: 0 0 420px !important;
         max-width: 420px !important;
         padding: 2.5rem 2.5rem !important;
-        border-radius: 0 16px 16px 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+      [data-fz-panel="right"] {
+        margin-right: 0 !important;
       }
     }
 
