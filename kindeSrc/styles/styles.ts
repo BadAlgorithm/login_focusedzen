@@ -222,20 +222,17 @@ export function getStyles(): string {
     /* Animations */
     @keyframes imageReveal {
       from {
-        transform: scale(1.03);
+        transform: scale(1.02);
         opacity: 0;
-        filter: blur(4px) saturate(0.5) brightness(0.4);
       }
       to {
         transform: scale(1.0);
         opacity: 1;
-        filter: blur(1.5px) saturate(0.75) brightness(0.75);
       }
     }
 
     .panel-image {
-      animation: imageReveal 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-      filter: blur(1.5px) saturate(0.75) brightness(0.75);
+      animation: imageReveal 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
     }
 
     /* ---- Mist / fog layers ---- */

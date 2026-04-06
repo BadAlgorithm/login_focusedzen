@@ -89,16 +89,16 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           background: "#1a2e23",
         }}
       >
-        {/* Background image - blurred/desaturated for "glimpse through fog" */}
+        {/* Background image */}
         <img
           className="panel-image"
           src="https://cdn.focusedzen.com/login/garden-entrance-2x.webp"
           alt=""
           style={{
             position: "absolute",
-            inset: "-8px",
-            width: "calc(100% + 16px)",
-            height: "calc(100% + 16px)",
+            inset: "0",
+            width: "100%",
+            height: "100%",
             objectFit: "cover",
             objectPosition: "center 30%",
             zIndex: 0,
