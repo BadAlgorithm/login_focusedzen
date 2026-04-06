@@ -47,15 +47,15 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             src="https://cdn.focusedzen.com/login/enso-logo.png"
             alt=""
             style={{
-              width: "44px",
-              height: "44px",
+              width: "52px",
+              height: "52px",
             }}
           />
           <span style={{ display: "flex", alignItems: "baseline" }}>
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "1.5rem",
+                fontSize: "1.75rem",
                 fontWeight: 500,
                 color: "#5C8A73",
               }}
@@ -65,7 +65,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "1.5rem",
+                fontSize: "1.75rem",
                 fontWeight: 700,
                 color: "#C45A7D",
               }}

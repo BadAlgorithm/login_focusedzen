@@ -136,7 +136,7 @@ export function getStyles(): string {
       text-transform: uppercase;
       font-size: 0.6875rem;
       letter-spacing: 0.1em;
-      margin: 1rem 0 !important;
+      margin: 1.5rem 0 !important;
     }
 
     [data-kinde-choice-separator]::before,
@@ -147,7 +147,7 @@ export function getStyles(): string {
 
     /* Form field spacing */
     [data-kinde-form-field] {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     /* Widget full width */
@@ -157,7 +157,8 @@ export function getStyles(): string {
 
     /* Social button row */
     [data-kinde-layout-social-buttons] {
-      gap: 0.375rem !important;
+      gap: 0.625rem !important;
+      margin-bottom: 0.25rem !important;
     }
 
     /* Footer links */
