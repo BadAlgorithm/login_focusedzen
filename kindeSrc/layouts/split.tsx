@@ -55,7 +55,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "1.75rem",
+                fontSize: "2rem",
                 fontWeight: 500,
                 color: "#5C8A73",
               }}
@@ -65,7 +65,7 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             <span
               style={{
                 fontFamily: "'Manrope', system-ui, sans-serif",
-                fontSize: "1.75rem",
+                fontSize: "2rem",
                 fontWeight: 700,
                 color: "#C45A7D",
               }}
