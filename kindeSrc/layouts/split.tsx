@@ -78,6 +78,8 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
             overflow: "hidden",
             pointerEvents: "none",
             zIndex: 4,
+            contain: "layout paint",
+            transform: "translateZ(0)",
           }}
         >
           <div className="firefly firefly-1" />
@@ -92,6 +94,8 @@ export const SplitLayout: React.FC<SplitLayoutProps> = ({ children }) => {
           <div className="firefly firefly-10" />
           <div className="firefly firefly-11" />
           <div className="firefly firefly-12" />
+          <div className="firefly firefly-13" />
+          <div className="firefly firefly-14" />
         </div>
 
         {/* Cinematic vignette overlay - flipped: right edge fades into form panel */}
