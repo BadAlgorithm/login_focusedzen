@@ -477,10 +477,70 @@ export function getStyles(): string {
     .firefly-14 {
       width: 4px; height: 4px;
       background: #f0d080;
-      box-shadow: 0 0 3px 2px rgba(240,208,128,0.75), 0 0 11px 5px rgba(240,208,128,0.28);
+      box-shadow: 0 0 3px 2px rgba(240,208,128,0.85), 0 0 12px 6px rgba(240,208,128,0.38), 0 0 26px 13px rgba(240,208,128,0.1);
       top: 50%; left: 8%;
       animation: drift-2 34s ease-in-out infinite, glow-4 12.9s ease-in-out infinite;
       animation-delay: -11s, -0.92s;
+    }
+
+    /* firefly-15: large hero, upper-left */
+    .firefly-15 {
+      width: 7px; height: 7px;
+      background: #f5d47a;
+      box-shadow: 0 0 7px 3px rgba(245,212,122,1), 0 0 20px 10px rgba(245,212,122,0.55), 0 0 44px 22px rgba(245,212,122,0.2);
+      top: 22%; left: 14%;
+      animation: drift-2 26s ease-in-out infinite, glow-1 17.1s ease-in-out infinite;
+      animation-delay: -9s, -11.4s;
+    }
+
+    /* firefly-16: mid-upper */
+    .firefly-16 {
+      width: 6px; height: 6px;
+      background: #f0cc5e;
+      box-shadow: 0 0 6px 3px rgba(240,204,94,0.95), 0 0 18px 9px rgba(240,204,94,0.45), 0 0 38px 19px rgba(240,204,94,0.15);
+      top: 15%; left: 55%;
+      animation: drift-5 30s ease-in-out infinite, glow-5 14.7s ease-in-out infinite;
+      animation-delay: -13s, -10.5s;
+    }
+
+    /* firefly-17: low-left */
+    .firefly-17 {
+      width: 5px; height: 5px;
+      background: #e8cc6a;
+      box-shadow: 0 0 5px 2px rgba(232,204,106,0.9), 0 0 16px 8px rgba(232,204,106,0.4), 0 0 32px 16px rgba(232,204,106,0.12);
+      top: 75%; left: 28%;
+      animation: drift-1 32s ease-in-out infinite, glow-2 11.3s ease-in-out infinite;
+      animation-delay: -17s, -4.8s;
+    }
+
+    /* firefly-18: mid */
+    .firefly-18 {
+      width: 6px; height: 6px;
+      background: #f5d47a;
+      box-shadow: 0 0 6px 3px rgba(245,212,122,0.95), 0 0 18px 9px rgba(245,212,122,0.45), 0 0 36px 18px rgba(245,212,122,0.15);
+      top: 38%; left: 38%;
+      animation: drift-4 24s ease-in-out infinite, glow-3 8.1s ease-in-out infinite;
+      animation-delay: -3s, -4.05s;
+    }
+
+    /* firefly-19: EMBER #3 - distant mid-depth */
+    .firefly-19 {
+      width: 5px; height: 5px;
+      background: #f0cc5e;
+      box-shadow: 0 0 5px 2px rgba(240,204,94,0.9), 0 0 15px 7px rgba(240,204,94,0.4), 0 0 30px 15px rgba(240,204,94,0.12);
+      top: 58%; left: 46%;
+      animation: drift-6 36s ease-in-out infinite, glow-ember 14.7s ease-in-out infinite;
+      animation-delay: -19s, -7.35s;
+    }
+
+    /* firefly-20: small, low-mid, trimmed shadow */
+    .firefly-20 {
+      width: 4px; height: 4px;
+      background: #e8cc6a;
+      box-shadow: 0 0 4px 2px rgba(232,204,106,0.8), 0 0 13px 6px rgba(232,204,106,0.32);
+      top: 88%; left: 60%;
+      animation: drift-3 33s ease-in-out infinite, glow-4 5.3s ease-in-out infinite;
+      animation-delay: -21s, -2.1s;
     }
 
     /* Drift keyframes - organic float paths */
@@ -537,59 +597,59 @@ export function getStyles(): string {
       100% { transform: translate(0, 0); }
     }
 
-    /* Glow keyframes - firefly bioluminescence (reduced for darker backdrop) */
+    /* Glow keyframes - firefly bioluminescence (brightened for prominence) */
     @keyframes glow-1 {
       0%   { opacity: 0; }
-      15%  { opacity: 0.1; }
-      40%  { opacity: 0.7; }
-      60%  { opacity: 0.5; }
-      80%  { opacity: 0.15; }
+      15%  { opacity: 0.18; }
+      40%  { opacity: 1; }
+      60%  { opacity: 0.7; }
+      80%  { opacity: 0.25; }
       100% { opacity: 0; }
     }
 
     @keyframes glow-2 {
       0%   { opacity: 0; }
-      20%  { opacity: 0.08; }
-      45%  { opacity: 0.65; }
-      70%  { opacity: 0.35; }
+      20%  { opacity: 0.15; }
+      45%  { opacity: 0.95; }
+      70%  { opacity: 0.5; }
       100% { opacity: 0; }
     }
 
     @keyframes glow-3 {
       0%   { opacity: 0; }
-      30%  { opacity: 0.45; }
-      50%  { opacity: 0.25; }
-      75%  { opacity: 0.5; }
+      30%  { opacity: 0.75; }
+      50%  { opacity: 0.45; }
+      75%  { opacity: 0.85; }
       100% { opacity: 0; }
     }
 
     /* glow-4: asymmetric slow-rise / quick-fade */
     @keyframes glow-4 {
       0%   { opacity: 0; }
-      10%  { opacity: 0.05; }
-      30%  { opacity: 0.3; }
-      55%  { opacity: 0.8; }
-      68%  { opacity: 0.2; }
+      10%  { opacity: 0.1; }
+      30%  { opacity: 0.5; }
+      55%  { opacity: 1; }
+      68%  { opacity: 0.35; }
       100% { opacity: 0; }
     }
 
     /* glow-5: quick-rise / slow-fade */
     @keyframes glow-5 {
       0%   { opacity: 0; }
-      12%  { opacity: 0.25; }
-      22%  { opacity: 0.75; }
-      55%  { opacity: 0.4; }
-      85%  { opacity: 0.1; }
+      12%  { opacity: 0.4; }
+      22%  { opacity: 0.95; }
+      55%  { opacity: 0.55; }
+      85%  { opacity: 0.18; }
       100% { opacity: 0; }
     }
 
-    /* glow-ember: soft 0.10 floor - never fully dark, distant always-glowing ember */
+    /* glow-ember: soft 0.2 floor - never fully dark, distant always-glowing ember */
     @keyframes glow-ember {
-      0%   { opacity: 0.1; }
-      30%  { opacity: 0.25; }
-      50%  { opacity: 0.55; }
-      75%  { opacity: 0.3; }
-      100% { opacity: 0.1; }
+      0%   { opacity: 0.2; }
+      30%  { opacity: 0.5; }
+      50%  { opacity: 0.75; }
+      75%  { opacity: 0.45; }
+      100% { opacity: 0.2; }
     }
 
     /* Accessibility: reduced motion */
@@ -609,8 +669,8 @@ export function getStyles(): string {
         visibility: visible;
         opacity: 0.4;
       }
-      /* reduced-motion: show ~7 of 14 to avoid a cluster of static dots */
-      .firefly-3, .firefly-4, .firefly-7, .firefly-10, .firefly-12, .firefly-13, .firefly-14 {
+      /* reduced-motion: show ~10 of 20 to avoid a cluster of static dots */
+      .firefly-3, .firefly-4, .firefly-7, .firefly-10, .firefly-12, .firefly-13, .firefly-14, .firefly-17, .firefly-19, .firefly-20 {
         opacity: 0;
       }
       .mist {
