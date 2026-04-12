@@ -53,18 +53,27 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
         <div data-kinde-root="true">{children}</div>
         <script nonce={getKindeNonce()} dangerouslySetInnerHTML={{ __html: `
           (function () {
-            function ready(img) {
+            function ready(img, instant) {
               img.classList.add('loaded');
               var panel = img.closest('[data-fz-panel="right"]');
-              if (panel) panel.classList.add('scene-ready');
+              if (panel) {
+                if (instant) panel.classList.add('no-transition');
+                panel.classList.add('scene-ready');
+                if (instant) {
+                  void panel.offsetHeight;
+                  requestAnimationFrame(function () {
+                    panel.classList.remove('no-transition');
+                  });
+                }
+              }
             }
             function check(img) {
               if (img.classList.contains('loaded')) return;
               if (img.complete && img.naturalWidth > 0) {
-                ready(img);
+                ready(img, true);
               } else {
-                img.addEventListener('load', (function (el) { return function () { ready(el); }; })(img));
-                img.addEventListener('error', (function (el) { return function () { ready(el); }; })(img));
+                img.addEventListener('load', (function (el) { return function () { ready(el, false); }; })(img));
+                img.addEventListener('error', (function (el) { return function () { ready(el, false); }; })(img));
               }
             }
             function init() {

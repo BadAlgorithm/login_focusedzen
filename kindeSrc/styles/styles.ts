@@ -267,6 +267,14 @@ export function getStyles(): string {
       opacity: 1;
     }
 
+    /* Skip transitions on cached/SPA-nav loads (applied momentarily by JS) */
+    .no-transition,
+    .no-transition .panel-lqip,
+    .no-transition .mist,
+    .no-transition .panel-image {
+      transition: none !important;
+    }
+
     .mist-1 {
       bottom: -10%;
       left: -20%;
