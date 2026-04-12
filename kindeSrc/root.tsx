@@ -71,12 +71,11 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
             }
             function check(img) {
               if (img.classList.contains('loaded')) return;
-              var instant = everLoaded || (img.complete && img.naturalWidth > 0);
-              if (instant) {
-                ready(img, true);
+              if (img.complete && img.naturalWidth > 0) {
+                ready(img, everLoaded);
               } else {
-                img.addEventListener('load', (function (el) { return function () { ready(el, false); }; })(img));
-                img.addEventListener('error', (function (el) { return function () { ready(el, false); }; })(img));
+                img.addEventListener('load', (function (el) { return function () { ready(el, everLoaded); }; })(img));
+                img.addEventListener('error', (function (el) { return function () { ready(el, everLoaded); }; })(img));
               }
             }
             function init() {
