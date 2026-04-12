@@ -28,7 +28,6 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
         <meta name="robots" content="noindex, nofollow" />
         <meta content={getKindeCSRF()} name="csrf-token" />
         <title>{context.widget.content.pageTitle || "FocusedZen"}</title>
-        <link rel="icon" type="image/png" href="https://cdn.focusedzen.com/login/favicon.png" />
         <link
           rel="preload"
           as="image"
