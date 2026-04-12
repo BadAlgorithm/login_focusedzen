@@ -58,18 +58,22 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
               var panel = img.closest('[data-fz-panel="right"]');
               if (panel) panel.classList.add('scene-ready');
             }
-            function init() {
-              var imgs = document.querySelectorAll('img.panel-image');
-              for (var i = 0; i < imgs.length; i++) {
-                var img = imgs[i];
-                if (img.complete && img.naturalWidth > 0) {
-                  ready(img);
-                } else {
-                  img.addEventListener('load', (function (el) { return function () { ready(el); }; })(img));
-                  img.addEventListener('error', (function (el) { return function () { ready(el); }; })(img));
-                }
+            function check(img) {
+              if (img.classList.contains('loaded')) return;
+              if (img.complete && img.naturalWidth > 0) {
+                ready(img);
+              } else {
+                img.addEventListener('load', (function (el) { return function () { ready(el); }; })(img));
+                img.addEventListener('error', (function (el) { return function () { ready(el); }; })(img));
               }
             }
+            function init() {
+              var imgs = document.querySelectorAll('img.panel-image');
+              for (var i = 0; i < imgs.length; i++) check(imgs[i]);
+            }
+            /* Re-run on Kinde SPA navigations (login <-> register) */
+            new MutationObserver(function () { init(); })
+              .observe(document.body, { childList: true, subtree: true });
             if (document.readyState === 'loading') {
               document.addEventListener('DOMContentLoaded', init);
             } else {
