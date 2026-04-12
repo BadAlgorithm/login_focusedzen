@@ -53,6 +53,7 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
         <div data-kinde-root="true">{children}</div>
         <script nonce={getKindeNonce()} dangerouslySetInnerHTML={{ __html: `
           (function () {
+            var everLoaded = false;
             function ready(img, instant) {
               img.classList.add('loaded');
               var panel = img.closest('[data-fz-panel="right"]');
@@ -66,10 +67,12 @@ export const Root: React.FC<RootProps> = ({ context, request, children }) => {
                   });
                 }
               }
+              everLoaded = true;
             }
             function check(img) {
               if (img.classList.contains('loaded')) return;
-              if (img.complete && img.naturalWidth > 0) {
+              var instant = everLoaded || (img.complete && img.naturalWidth > 0);
+              if (instant) {
                 ready(img, true);
               } else {
                 img.addEventListener('load', (function (el) { return function () { ready(el, false); }; })(img));
